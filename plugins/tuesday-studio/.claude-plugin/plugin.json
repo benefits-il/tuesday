@@ -1,8 +1,0 @@
-{
-  "name": "tuesday-studio",
-  "version": "0.1.0",
-  "description": "One plugin, five jobs. Turn a brand's raw drafts and rough briefs into finished, on-brand work — outreach and welcome emails, Instagram posts and reels, a branded carousel, and an AI-character video. Bundles two sub-agents (content-writer, visual-producer), five skills, five slash commands, and an image/video connector. Reads whatever brand you give it.",
-  "author": {
-    "name": "Tuesday"
-  }
-}

@@ -1,6 +1,6 @@
 # /carousel (5-slide branded Instagram carousel)
 
-Paste this into Cowork with the Tuesday plugin installed and the brand pack attached. The visual is described down to the pixel on purpose. A free-tier image model only delivers when you leave it nothing to guess, so every slide spells out the exact background, color, type, mark, and text placement.
+Paste this into Cowork with brand-studio installed and the Tuesday brand pack attached. The visual is described down to the pixel on purpose. A free-tier image model only delivers when you leave it nothing to guess, so every slide spells out the exact background, color, type, mark, and text placement.
 
 ---
 

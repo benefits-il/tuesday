@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tuesday — Studio</title>
-<meta name="description" content="Tuesday Studio — one plugin, five jobs, one look. A Cowork plugin that turns raw drafts into finished, on-brand work.">
+<title>Tuesday — ערכת מותג</title>
+<meta name="description" content="Tuesday brand pack — the demo brand for the Benefits plugin unit. Two stations: build the brand voice, then use it to make real content. Full Hebrew and English kits.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Silkscreen:wght@400;700&family=Space+Grotesk:wght@400;500;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
@@ -43,60 +43,71 @@
   .hero { padding-top: var(--tue-s6); border-top: 4px solid var(--tue-yellow); }
   .hero h1 { font-family: var(--tue-display); text-transform: uppercase; font-size: var(--tue-fs-hero); line-height: var(--tue-leading-tight); letter-spacing: var(--tue-tracking-tight); margin: var(--tue-s3) 0; }
   .hero h1 .y { color: var(--tue-yellow); }
-  .hero p { font-size: 1.2rem; max-width: 52ch; color: #DDDDD9; line-height: var(--tue-leading-body); }
+  .hero p { font-size: 1.2rem; max-width: 56ch; color: #DDDDD9; line-height: var(--tue-leading-body); }
   .hero .cta { margin-top: var(--tue-s4); display: flex; gap: var(--tue-s3); flex-wrap: wrap; }
 
-  /* Kit chips */
-  .kit { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--tue-s3); margin-top: var(--tue-s5); }
-  .chip { border: 2px solid var(--tue-line-dark); padding: var(--tue-s3); display: flex; flex-direction: column; gap: 8px; }
-  .chip .name { font-family: var(--tue-display); text-transform: uppercase; font-size: 1rem; letter-spacing: var(--tue-tracking-tight); }
-  .chip .state { font-family: var(--tue-pixel); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; align-self: flex-start; padding: 4px 8px; }
-  .chip.live { border-color: var(--tue-yellow); }
-  .chip.live .state { background: var(--tue-yellow); color: var(--tue-black); }
-  .chip.soon { opacity: 0.6; }
-  .chip.soon .state { border: 1px solid var(--tue-mute); color: var(--tue-mute); }
-  .chip p { margin: 0; font-size: 0.92rem; color: #C9C9C5; line-height: 1.5; }
-  .chip .cmd { font-family: var(--tue-pixel); font-size: 11px; color: var(--tue-yellow); direction: ltr; unicode-bidi: isolate; display: inline-block; margin-top: 2px; }
+  /* Chain (two stations overview) */
+  .chain { display: grid; grid-template-columns: 1fr auto 1fr; align-items: stretch; gap: var(--tue-s3); margin-top: var(--tue-s5); }
+  @media (max-width: 720px) { .chain { grid-template-columns: 1fr; } .chain .arrow { transform: rotate(90deg); justify-self: center; } }
+  .stationcard { border: 2px solid var(--tue-line-dark); padding: var(--tue-s4); background: var(--tue-ink); }
+  .stationcard .n { font-family: var(--tue-pixel); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--tue-yellow); }
+  .stationcard h3 { font-family: var(--tue-display); text-transform: uppercase; font-size: 1.1rem; margin: 8px 0; letter-spacing: var(--tue-tracking-tight); }
+  [dir="rtl"] .stationcard h3 { letter-spacing: normal; }
+  .stationcard p { margin: 0; font-size: 0.95rem; color: #C9C9C5; line-height: 1.5; }
+  .chain .arrow { display: grid; place-items: center; font-family: var(--tue-display); color: var(--tue-yellow); font-size: 2rem; }
+  .chain .arrow .out { color: #C9C9C5; font-size: 0.7rem; font-family: var(--tue-pixel); text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* Steps */
+  .steps { margin: var(--tue-s3) 0 0; padding: 0; list-style: none; counter-reset: s; }
+  .steps li { counter-increment: s; position: relative; padding-block: 12px; padding-inline-start: 42px; border-top: 1px solid var(--tue-line-dark); font-size: 1rem; line-height: 1.55; }
+  .steps li::before { content: counter(s); position: absolute; inset-inline-start: 0; top: 10px; width: 28px; height: 28px; background: var(--tue-yellow); color: var(--tue-black); font-family: var(--tue-display); font-size: 14px; display: grid; place-items: center; }
+  .mono { font-family: var(--tue-pixel); font-size: 12px; background: var(--tue-black); color: var(--tue-yellow); padding: 2px 6px; direction: ltr; unicode-bidi: isolate; display: inline-block; }
+
+  /* Download cards */
+  .dl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--tue-s4); margin-top: var(--tue-s4); }
+  @media (max-width: 720px) { .dl-grid { grid-template-columns: 1fr; } }
+  .dlcard { background: var(--tue-ink); border: 2px solid var(--tue-line-dark); border-top: 4px solid var(--tue-yellow); padding: var(--tue-s4); display: flex; flex-direction: column; gap: 10px; }
+  .dlcard .lede { font-family: var(--tue-pixel); font-size: 11px; letter-spacing: 0.05em; color: var(--tue-mute); text-transform: uppercase; }
+  .dlcard h3 { font-family: var(--tue-display); text-transform: uppercase; font-size: 1.15rem; margin: 0; letter-spacing: var(--tue-tracking-tight); }
+  [dir="rtl"] .dlcard h3 { letter-spacing: normal; }
+  .dlcard p { margin: 0; font-size: 0.95rem; color: #C9C9C5; line-height: 1.5; flex: 1; }
+  .dlcard .file { font-family: var(--tue-pixel); font-size: 11px; color: var(--tue-mute); direction: ltr; unicode-bidi: isolate; }
+  .dlcard .btn-dl { font-family: var(--tue-display); text-transform: uppercase; background: var(--tue-yellow); color: var(--tue-black); border: 3px solid var(--tue-yellow); padding: 12px 22px; text-decoration: none; box-shadow: 5px 5px 0 rgba(0,0,0,0.35); display: inline-flex; gap: 10px; align-items: center; align-self: flex-start; font-size: 0.95rem; }
+  .dlcard .btn-dl:hover { transform: translate(-2px,-2px); }
+  .backup-note { margin-top: var(--tue-s3); font-size: 0.88rem; color: #B7B7B2; line-height: 1.55; border-inline-start: 3px solid var(--tue-line-dark); padding-inline-start: 12px; }
+  .backup-note .mono { background: var(--tue-ink); }
 
   /* Components grid (the four parts) */
-  .four { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: var(--tue-s3); }
+  .four { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: var(--tue-s3); margin-top: var(--tue-s4); }
   .part { background: var(--tue-ink); border-inline-start: 4px solid var(--tue-yellow); padding: var(--tue-s4); }
   .part .tag { font-family: var(--tue-pixel); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--tue-yellow); }
   .part h3 { font-family: var(--tue-display); text-transform: uppercase; font-size: 1.05rem; margin: 10px 0 8px; letter-spacing: var(--tue-tracking-tight); }
-  .part code, .part .mono { font-family: var(--tue-pixel); font-size: 12px; color: var(--tue-yellow); direction: ltr; unicode-bidi: isolate; display: inline-block; }
+  [dir="rtl"] .part h3 { letter-spacing: normal; }
   .part p { margin: 6px 0 0; font-size: 0.92rem; color: #D4D4D0; line-height: 1.5; }
-  .wraps { margin-top: var(--tue-s4); font-size: 1.05rem; color: #DDDDD9; }
-  .wraps b { color: var(--tue-yellow); }
 
-  /* Install */
-  .ways { display: grid; grid-template-columns: 1fr 1fr; gap: var(--tue-s4); }
-  @media (max-width: 720px) { .ways { grid-template-columns: 1fr; } }
-  .way { background: var(--tue-ink); border: var(--tue-border-light); padding: var(--tue-s4); }
-  .way h3 { font-family: var(--tue-display); text-transform: uppercase; font-size: 1.1rem; margin: 0 0 4px; letter-spacing: var(--tue-tracking-tight); }
-  .way .lede { font-family: var(--tue-pixel); font-size: 11px; letter-spacing: 0.05em; color: var(--tue-mute); text-transform: uppercase; margin-bottom: var(--tue-s3); }
-  .steps { margin: 0; padding: 0; list-style: none; counter-reset: s; }
-  .steps li { counter-increment: s; position: relative; padding-block: 10px; padding-inline-start: 40px; border-top: 1px solid var(--tue-line-dark); font-size: 0.96rem; line-height: 1.5; }
-  .steps li::before { content: counter(s); position: absolute; inset-inline-start: 0; top: 8px; width: 26px; height: 26px; background: var(--tue-yellow); color: var(--tue-black); font-family: var(--tue-display); font-size: 13px; display: grid; place-items: center; }
-  .steps code, .mono { font-family: var(--tue-pixel); font-size: 12px; background: var(--tue-black); color: var(--tue-yellow); padding: 2px 6px; direction: ltr; unicode-bidi: isolate; display: inline-block; }
-
-  /* Jobs table (the five capabilities → command + brief) */
+  /* Jobs table */
   .jobs { width: 100%; border-collapse: collapse; margin-top: var(--tue-s3); }
   .jobs th, .jobs td { text-align: start; padding: 10px 12px; border-top: 1px solid var(--tue-line-dark); font-size: 0.92rem; vertical-align: top; }
   .jobs th { font-family: var(--tue-pixel); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--tue-mute); }
   .jobs .mono { background: var(--tue-black); }
 
-  /* Code blocks (commands, play prompts — always LTR) */
-  pre { background: #050505; border: 1px solid var(--tue-line-dark); border-inline-start: 4px solid var(--tue-yellow); padding: var(--tue-s3); overflow-x: auto; margin: 0 0 var(--tue-s3); direction: ltr; }
-  pre code { font-family: var(--tue-pixel); font-size: 13px; color: #EDEDE8; line-height: 1.7; }
-  .note { color: #B7B7B2; font-size: 0.9rem; line-height: 1.6; max-width: 64ch; }
+  /* Install + prompt code blocks (LTR by default; Hebrew prompt blocks flip) */
+  pre { background: #050505; border: 1px solid var(--tue-line-dark); border-inline-start: 4px solid var(--tue-yellow); padding: var(--tue-s3); overflow-x: auto; margin: 0; direction: ltr; }
+  pre code { font-family: var(--tue-pixel); font-size: 13px; color: #EDEDE8; line-height: 1.7; white-space: pre-wrap; word-break: break-word; }
+  pre[dir="rtl"] { direction: rtl; border-inline-start: 0; border-inline-end: 4px solid var(--tue-yellow); }
+  pre[dir="rtl"] code { unicode-bidi: plaintext; text-align: right; }
+  .note { color: #B7B7B2; font-size: 0.92rem; line-height: 1.65; max-width: 66ch; }
   .note .mono { color: var(--tue-yellow); background: var(--tue-ink); }
 
-  /* Download */
-  .dl { display: flex; align-items: center; justify-content: space-between; gap: var(--tue-s4); background: var(--tue-yellow); color: var(--tue-black); padding: var(--tue-s4) var(--tue-s5); flex-wrap: wrap; }
-  .dl .meta b { font-family: var(--tue-display); text-transform: uppercase; font-size: 1.4rem; display: block; letter-spacing: var(--tue-tracking-tight); direction: ltr; }
-  .dl .meta span { font-family: var(--tue-pixel); font-size: 12px; }
-  .dl .btn-dark { font-family: var(--tue-display); text-transform: uppercase; background: var(--tue-black); color: var(--tue-yellow); border: 3px solid var(--tue-black); padding: 14px 26px; text-decoration: none; box-shadow: 6px 6px 0 rgba(0,0,0,0.35); display: inline-flex; gap: 10px; align-items: center; }
-  .dl .btn-dark:hover { transform: translate(-2px,-2px); }
+  /* Prompt copy-blocks */
+  .prompt { margin-top: var(--tue-s4); border: 1px solid var(--tue-line-dark); background: var(--tue-ink); }
+  .prompt__head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 14px; border-bottom: 1px solid var(--tue-line-dark); }
+  .prompt__cmd { font-family: var(--tue-pixel); font-size: 12px; color: var(--tue-yellow); direction: ltr; unicode-bidi: isolate; }
+  .copy { font-family: var(--tue-pixel); font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer; padding: 7px 14px; border: 2px solid var(--tue-yellow); border-radius: var(--tue-radius-pill); background: transparent; color: var(--tue-yellow); white-space: nowrap; }
+  .copy:hover { background: var(--tue-yellow); color: var(--tue-black); }
+  .copy.done { background: var(--tue-yellow); color: var(--tue-black); }
+  .prompt pre { border-top: 0; border-bottom: 0; border-inline-end: 0; }
+  .prompt pre[dir="rtl"] { border-inline-start: 0; border-inline-end: 4px solid var(--tue-yellow); }
 
   footer { padding: var(--tue-s5) 0; }
   .foot { font-family: var(--tue-pixel); font-size: 11px; letter-spacing: 0.05em; color: var(--tue-mute); line-height: 1.9; }
@@ -123,51 +134,80 @@
 <div class="wrap">
 
   <section class="hero">
-    <div class="eyebrow">Tuesday · plugin אחד ל-Cowork</div>
-    <h1>plugin אחד.<br>חמש מלאכות.<br><span class="y">מראה אחד.</span></h1>
-    <p>‏<span class="mono">tuesday-studio</span> הוא plugin אחד שעושה חמש מלאכות, במראה השחור-צהוב של Tuesday, בתוך Cowork. נותנים לו ערכת-מותג, והוא הופך טיוטות גולמיות לעבודה גמורה.</p>
+    <div class="eyebrow">Tuesday · ערכת-מותג להדגמה</div>
+    <h1>מערכת-המותג<br><span class="y">של Tuesday.</span></h1>
+    <p>זו ערכת-הדמו של יחידת ה-plugin, מלאה בעברית. כל מה שכאן שייך ל-Tuesday, חברת ניהול-עבודה לעצמאי שמריץ לבד את כל העסק. מותג-הדגמה, לא מוצר אמיתי. עובדים בשתי תחנות מחוברות: בראשונה יוצרים את קול-המותג, בשנייה משתמשים בו כדי לייצר תוכן. (רוצים את הערכה באנגלית? יש מתג שפה למעלה.)</p>
     <div class="cta">
-      <a class="tue-btn" href="#he-install">איך מתקינים</a>
-      <a class="tue-btn tue-btn--ghost" href="#he-inside">מה יש בפנים</a>
+      <a class="tue-btn" href="#he-s1">תחנה 1</a>
+      <a class="tue-btn tue-btn--ghost" href="#he-s2">תחנה 2</a>
     </div>
 
-    <div class="kit">
-      <div class="chip live"><span class="state">מלאכה</span><span class="name">מייל פנייה</span><p>מייל קר על-המותג, מוכן כטיוטה ב-Gmail.</p><span class="cmd">/outreach</span></div>
-      <div class="chip live"><span class="state">מלאכה</span><span class="name">מייל ברוכים-הבאים</span><p>מייל welcome ממותג, טיוטה ב-Gmail.</p><span class="cmd">/welcome</span></div>
-      <div class="chip live"><span class="state">מלאכה</span><span class="name">פוסט ורילס</span><p>תמונה plus כיתוב לאינסטגרם.</p><span class="cmd">/post</span></div>
-      <div class="chip live"><span class="state">מלאכה</span><span class="name">קרוסלה ממותגת</span><p>כמה שקופיות, אותו מראה בדיוק.</p><span class="cmd">/carousel</span></div>
-      <div class="chip live"><span class="state">מלאכה</span><span class="name">סרטון דמות</span><p>רילס קצר עם דמות-AI.</p><span class="cmd">/reel</span></div>
+    <div class="chain">
+      <div class="stationcard">
+        <span class="n">תחנה 1</span>
+        <h3>קול-המותג</h3>
+        <p>מזקקים קול עקבי מהחומרים המפוזרים של Tuesday, ומקבלים מסמך הנחיות-קול.</p>
+      </div>
+      <div class="arrow">←<span class="out">הקול עובר הלאה</span></div>
+      <div class="stationcard">
+        <span class="n">תחנה 2</span>
+        <h3>תוכן אמיתי</h3>
+        <p>נותנים את הקול ל-plugin רחב יותר, והוא מפיק מייל, פוסט, קרוסלה או סרטון במראה של Tuesday.</p>
+      </div>
     </div>
   </section>
 
-  <section id="he-inside">
-    <div class="eyebrow">tuesday-studio</div>
-    <h2 class="title">מה יש בתוך ה-plugin</h2>
-    <div class="four">
-      <div class="part"><span class="tag">סקילים</span><h3>חמישה — אחד לכל מלאכה</h3><p>השיטה. כל סקיל קורא את דף-המותג שאתם נותנים — צבעים, טיפוגרפיה, לוגו, קול — ומחיל אותו. גנרי: החלפת ערכת-המותג מפעילה אותו על מותג אחר.</p></div>
-      <div class="part"><span class="tag">חיבורים</span><h3>שניים, בשתי דרכים</h3><p>‏<span class="mono">Higgsfield</span> לתמונה ווידאו, מחוּוט ב-<span class="mono">.mcp.json</span>. ‏<span class="mono">Gmail</span> לטיוטות, מדליקים פעם אחת ב-Connectors. הדלת אל מה שבחוץ.</p></div>
-      <div class="part"><span class="tag">פקודות</span><h3>חמש</h3><p>הכפתורים. <span class="mono">/outreach</span> <span class="mono">/welcome</span> <span class="mono">/post</span> <span class="mono">/carousel</span> <span class="mono">/reel</span> — כל פקודה מפעילה את הסוכן הנכון.</p></div>
-      <div class="part"><span class="tag">סוכנים</span><h3>שניים</h3><p>הדמויות. <span class="mono">content-writer</span> כותב את המיילים והכיתובים; <span class="mono">visual-producer</span> מפיק את התמונות, הקרוסלה והסרטון.</p></div>
-    </div>
-    <p class="wraps">ה-plugin הוא הקופסה. הוא <b>עוטף</b> את שלושת האחרים. זה כל הרעיון.</p>
-  </section>
-
-  <section id="he-install">
-    <div class="eyebrow">התקנה</div>
-    <h2 class="title">מתקינים ב-Cowork</h2>
-    <p class="note" style="margin-bottom:var(--tue-s3)">ב-Cowork, פותחים את <span class="mono">/plugin</span> ומריצים את שתי השורות:</p>
-    <pre><code>/plugin marketplace add benefits-il/tuesday
-/plugin install tuesday-studio@tuesday</code></pre>
-    <p class="note">שני החיבורים — מוסיפים כל אחד פעם אחת ברשימת ה-Connectors (ב-claude.ai: Settings ואז Connectors · ב-Cowork: Customize ואז Connectors). <span class="mono">Higgsfield</span> (תמונה ווידאו): בוחרים <b>Add custom connector</b>, קוראים לו Higgsfield, מדביקים את הכתובת <span class="mono">https://mcp.higgsfield.ai/mcp</span>, לוחצים Connect, ומתחברים עם חשבון Higgsfield — חינם, בלי כרטיס, בלי API key. ה-plugin כבר מפנה לכתובת הזו ב-<span class="mono">.mcp.json</span>; ההתחברות היא מה שמרשה לו לעבוד. <span class="mono">Gmail</span> (טיוטות): מדליקים את החיבור המובנה ומתחברים. המיילים נשמרים כטיוטה, אף פעם לא נשלחים.</p>
-  </section>
-
-  <section id="he-play">
-    <div class="eyebrow">איך מריצים</div>
-    <h2 class="title">משחקים עם זה</h2>
+  <section id="he-s1">
+    <div class="eyebrow">תחנה 1</div>
+    <h2 class="title">יוצרים את קול-המותג</h2>
+    <p class="note">מתקינים plugin מוכן מהספרייה של קלוד בשם <span class="mono">brand-voice</span>, נותנים לו את כל החומרים המפוזרים של Tuesday, והוא מזקק מהם קול אחד עקבי. זו תחנה שכולם עושים.</p>
     <ol class="steps">
-      <li>מורידים את ערכת-המותג למטה ופותחים את ה-zip.</li>
-      <li>מצרפים לשיחה ב-Cowork את <span class="mono">brand-voice.md</span> (הקול שיצרתם עם ה-plugin brand-voice) plus <span class="mono">brand-sheet.md</span> plus את הבריף של המלאכה שבחרתם.</li>
-      <li>מעתיקים את הפרומפט המוכן מתוך <span class="mono">prompts/</span> ומדביקים. הפקודה מפעילה את הסוכן, הסוכן את הסקיל, דרך החיבור.</li>
+      <li>ב-Cowork נכנסים ל-Customize ואז Personal plugins, מוסיפים את הספרייה <span class="mono">anthropics/knowledge-work-plugins</span> ומתקינים מתוכה את <span class="mono">brand-voice</span>.</li>
+      <li>מורידים את חבילת תחנה 1 (למטה) ופותחים אותה. בפנים תיקיית <span class="mono">raw</span> עם החומרים המפוזרים של Tuesday: מיילים, פוסטים והכרזות. חלקם טובים, חלקם תאגידיים ומשעממים. זה הבלגן שממנו מזקקים קול.</li>
+      <li>מצרפים לצ'אט את הקבצים מתוך <span class="mono">raw</span>, ומריצים את הפרומפט הזה (הוא מכריח את ה-plugin לעבוד רק מהקבצים שצירפתם):</li>
+    </ol>
+    <div class="prompt">
+      <div class="prompt__head"><span class="prompt__cmd">/brand-voice:discover-brand</span><button type="button" class="copy" data-copy="p-discover">העתק</button></div>
+      <pre id="p-discover" dir="rtl"><code>/brand-voice:discover-brand
+
+השתמש רק בקבצים שצירפתי בצ'אט הזה. אל תתחבר ל-Notion, ל-Google Drive, ל-Slack או לכל מקור חיצוני אחר. עבוד אך ורק מהמסמכים המצורפים האלה. זקק את קול-המותג העקבי, והתעלם מהרעש שנשמע תאגידי.</code></pre>
+    </div>
+    <p class="note" style="margin-top:var(--tue-s4)">כשהפקודה מסיימת, מריצים <span class="mono">/brand-voice:generate-guidelines</span> ומקבלים מסמך הנחיות-קול. שומרים אותו בשם <span class="mono">brand-voice.md</span>. ניקח אותו איתנו לתחנה 2.</p>
+
+    <div class="dl-grid">
+      <div class="dlcard">
+        <span class="lede">חבילת תחנה 1 · עברית</span>
+        <h3>החומרים הגולמיים</h3>
+        <p>תיקיית <span class="mono">raw</span> בלבד: ששת החומרים המפוזרים של Tuesday, בעברית. זה הקלט ל-brand-voice.</p>
+        <span class="file">dist/tuesday-station1-raw-he.zip</span>
+        <a class="btn-dl" href="dist/tuesday-station1-raw-he.zip" download>הורדת חבילת תחנה 1</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="he-s2">
+    <div class="eyebrow">תחנה 2</div>
+    <h2 class="title">משתמשים בקול</h2>
+    <p class="note">כאן מתקינים את ה-plugin הגנרי <span class="mono">brand-studio</span>, נותנים לו את <span class="mono">brand-voice.md</span> שיצרתם ועוד קבצים מהערכה, ומפיקים תוכן אמיתי. זה המסלול המלא, וכאן פוגשים את כל ארבעת הרכיבים יחד.</p>
+
+    <p class="note" style="margin-top:var(--tue-s3)">מתקינים את ה-plugin (ב-Cowork פותחים <span class="mono">/plugin</span>):</p>
+    <pre><code>/plugin marketplace add benefits-il/brand-studio
+/plugin install brand-studio@brand-studio</code></pre>
+    <p class="note" style="margin-top:var(--tue-s3)">שני החיבורים — מוסיפים כל אחד פעם אחת ברשימת ה-Connectors. <span class="mono">Higgsfield</span> (תמונה ווידאו): <b>Add custom connector</b>, קוראים לו Higgsfield, מדביקים את <span class="mono">https://mcp.higgsfield.ai/mcp</span>, Connect, ומתחברים עם חשבון חינם (בלי כרטיס, בלי API key). <span class="mono">Gmail</span> (טיוטות): מדליקים את החיבור המובנה. המיילים נשמרים כטיוטה, אף פעם לא נשלחים.</p>
+
+    <h3 style="font-family:var(--tue-display);text-transform:uppercase;font-size:1.05rem;margin:var(--tue-s5) 0 var(--tue-s3)">מה יש בתוך ה-plugin</h3>
+    <div class="four">
+      <div class="part"><span class="tag">סקילים</span><h3>חמישה, אחד לכל מלאכה</h3><p>כל סקיל קורא את ערכת-המותג שאתם נותנים ומחיל אותה. גנרי: ערכה אחרת מפעילה אותו על מותג אחר.</p></div>
+      <div class="part"><span class="tag">חיבורים</span><h3>שניים, בשתי דרכים</h3><p><span class="mono">Higgsfield</span> מחווט ב-<span class="mono">.mcp.json</span>; <span class="mono">Gmail</span> מדליקים ב-Connectors. הדלת אל מה שבחוץ.</p></div>
+      <div class="part"><span class="tag">פקודות</span><h3>חמש</h3><p><span class="mono">/outreach</span> <span class="mono">/welcome</span> <span class="mono">/post</span> <span class="mono">/carousel</span> <span class="mono">/reel</span> — כל פקודה מפעילה את הסוכן הנכון.</p></div>
+      <div class="part"><span class="tag">סוכנים</span><h3>שניים</h3><p><span class="mono">content-writer</span> כותב מיילים וכיתובים; <span class="mono">visual-producer</span> מפיק תמונות, קרוסלה וסרטון.</p></div>
+    </div>
+
+    <h3 style="font-family:var(--tue-display);text-transform:uppercase;font-size:1.05rem;margin:var(--tue-s5) 0 var(--tue-s3)">מה מריצים</h3>
+    <ol class="steps">
+      <li>מורידים את חבילת תחנה 2 (למטה) ופותחים אותה.</li>
+      <li>מצרפים לשיחה ב-Cowork את <span class="mono">brand-voice.md</span> (שיצרתם בתחנה 1) plus <span class="mono">brand-sheet.md</span> plus את הבריף של המלאכה שבחרתם.</li>
+      <li>מעתיקים את הפרומפט המתאים מהבלוקים שלמטה, מדביקים, ומריצים. הפקודה מפעילה את הסוכן, הסוכן את הסקיל, דרך החיבור.</li>
     </ol>
     <table class="jobs">
       <thead><tr><th>פקודה</th><th>מה מקבלים</th><th>הבריף בערכה</th></tr></thead>
@@ -179,20 +219,167 @@
         <tr><td><span class="mono">/reel</span></td><td>סרטון דמות-AI קצר</td><td><span class="mono">character-brief.md</span></td></tr>
       </tbody>
     </table>
-    <p class="note">ה-free של Higgsfield מוציא בינוני (מודל בסיסי plus watermark). המנוף לאיכות הוא פרומפט ויזואלי מדויק — בדיוק מה שהסוכן בונה לכם מדף-המותג. מי שרוצה נקי ו-HD: מנוי Higgsfield (בערך 15 דולר לחודש), אופציונלי.</p>
+
+    <div class="dl-grid">
+      <div class="dlcard">
+        <span class="lede">חבילת תחנה 2 · עברית</span>
+        <h3>ערכת-המותג</h3>
+        <p>דף-המותג, הבריף הוויזואלי, וחמשת הבריפים — אחד לכל מלאכה, בעברית. הדאטה שמריצים עליה את ה-plugin.</p>
+        <span class="file">dist/tuesday-station2-brand-pack-he.zip</span>
+        <a class="btn-dl" href="dist/tuesday-station2-brand-pack-he.zip" download>הורדת חבילת תחנה 2</a>
+        <p class="backup-note">בתוך החבילה יש תיקיית <span class="mono">backup</span> עם <span class="mono">brand-voice.md</span> מוכן. זה גיבוי, רק למי שנתקע בתחנה 1. הדרך הנכונה היא לייצר אותו בעצמכם, זה כל הקסם של השרשרת.</p>
+      </div>
+    </div>
+    <p class="note" style="margin-top:var(--tue-s4)">ה-free של Higgsfield מוציא בינוני (מודל בסיסי plus watermark). המנוף לאיכות הוא פרומפט ויזואלי מדויק — בדיוק מה ש-<span class="mono">visual-producer</span> בונה לכם מדף-המותג. מי שרוצה נקי ו-HD: מנוי Higgsfield (בערך 15 דולר לחודש), אופציונלי.</p>
   </section>
 
-  <section id="he-download" style="border-bottom:none;">
-    <div class="eyebrow">הדאטא</div>
-    <h2 class="title">ערכת-המותג של Tuesday</h2>
-    <div class="dl">
-      <div class="meta"><b>Tuesday brand pack</b><span>דף-מותג plus חומרי-גלם plus חמשת הפרומפטים המוכנים</span></div>
-      <a class="btn-dark" href="dist/tuesday-brand.zip" download>הורדת .zip</a>
+  <section id="he-prompts" style="border-bottom:none;">
+    <div class="eyebrow">הפרומפטים</div>
+    <h2 class="title">חמשת הפרומפטים המוכנים</h2>
+    <p class="note">כל פרומפט מוכן להעתקה ומפיק תוכן בעברית. מתקינים את brand-studio, מצרפים <span class="mono">brand-voice.md</span> plus <span class="mono">brand-sheet.md</span> plus הבריף, מעתיקים את הפרומפט המתאים, ומדביקים ב-Cowork.</p>
+
+    <div class="prompt">
+      <div class="prompt__head"><span class="prompt__cmd">/outreach</span><button type="button" class="copy" data-copy="p-outreach">העתק</button></div>
+      <pre id="p-outreach" dir="rtl"><code>/outreach
+
+אתה כותב מייל פנייה קר אחד וקצר עבור Tuesday, אפליקציית ניהול-העבודה לעצמאי שמריץ לבד את כל ההצגה.
+
+קרא את הקבצים המצורפים האלה לפני הכתיבה:
+- brand-voice.md: הנחיות קול-המותג של Tuesday שייצרת בתחנה 1. זה החוק לאיך זה נשמע.
+- brand-sheet.md: העובדות, הצבעים והסמל של Tuesday.
+- outreach-context.md: למי המייל הזה מיועד, מה הבקשה, ומה המסר המרכזי האחד שהוא חייב לשאת.
+- raw/feature-announcement.md: ההכרזה התאגידית של "Tasks 2.0". קרא אותה רק כדי לשלוף את העובדה האחת האמיתית והשימושית שקבורה בז'רגון. אל תעתיק אף מילה מהטון שלה. הטון הזה הוא בדיוק מה שאתה מציל את המסר הזה ממנו.
+
+נמען: (החליפו בשם, תפקיד, ואיך מצאו אותנו, לדוגמה "מאיה, מעצבת מותג עצמאית, מצאה אותנו דרך ניוזלטר").
+
+כתוב את המייל בעברית כך שהוא:
+- נפתח מהצד, לא על המוצר. הקשר, סצנה אמיתית קטנה מטחנת העצמאי, אף פעם לא "רציתי לפנות אליך בנוגע ל-Tuesday".
+- מנחית בפשטות את המסר המרכזי האחד מ-outreach-context.md: לקוחות, פרויקטים וחשבוניות במקום אחד, הוא לא יעשה את העבודה, הוא מונע ממך לאבד את החוט, מתחילים חינם בלי כרטיס ובלי שיחת הדגמה.
+- נושא את הקול של Tuesday מ-brand-voice.md: יבש, ישיר, מעמית לעמית, קצת מודע-לעצמו. השתמש בהערת-אגב אחת בסוגריים שעושה עבודה אמיתית. בלי באזזוורדס, בלי סימני-קריאה, בלי אימוג'ים, בלי קו-מפריד ארוך.
+- נשאר קצר. מתחת ל-130 מילים. שורת נושא שמצדיקה את הפתיחה בלי הייפ.
+- נסגר על שורה שמנחיתה וסיבה אחת ברורה ללחוץ, לא "אל תפספס".
+
+כל הטקסט הנראה-לעין במייל חייב להיות בעברית: שורת הנושא והגוף בעברית. שמות המוצר Tuesday ושמות הקבצים נשארים באנגלית.
+
+אז שמור את זה כטיוטה ב-Gmail ממוענת לנמען. אל תשלח. תגיד לי שהטיוטה מוכנה והצג לי את שורת הנושא והגוף כדי שאקרא לפני שזה הולך לאן שהוא.</code></pre>
+    </div>
+
+    <div class="prompt">
+      <div class="prompt__head"><span class="prompt__cmd">/welcome</span><button type="button" class="copy" data-copy="p-welcome">העתק</button></div>
+      <pre id="p-welcome" dir="rtl"><code>/welcome
+
+אתה כותב את מייל קבלת-הפנים שמשתמש Tuesday חדש לגמרי מקבל בדקה שבה הוא פותח חשבון. Tuesday היא אפליקציית ניהול-העבודה לעצמאי שמריץ לבד את כל ההצגה.
+
+קרא את הקבצים המצורפים האלה לפני הכתיבה:
+- brand-voice.md: הנחיות קול-המותג של Tuesday שייצרת בתחנה 1. החזק בהן כל הזמן.
+- brand-sheet.md: העובדות, הצבעים והסמל של Tuesday.
+- welcome-points.md: על מה לקדם אותם בברכה, מה הצעד הראשון האחד, רמז הטון, ומה לא להבטיח.
+
+כתוב את המייל בעברית כך שהוא:
+- נפתח חם אבל יבש. הם כבר אמרו כן, אז אל תמכור. שורה שפוגשת אותם איפה שהם נמצאים (בוהים בסביבת עבודה ריקה), לא "אנחנו מתרגשים שהצטרפת למסע הזה".
+- מנקב את הניצחון האמיתי מ-welcome-points.md בלי מצעד: הם הוציאו את העסק שלהם מחיי שלוש-האפליקציות-ופתק.
+- נותן בדיוק צעד ראשון אחד: להוסיף את הלקוח הראשון. לקוח אחד. הבהר שאין אשף בן ארבעה-עשר שלבים, יש כפתור, הם ימצאו אותו.
+- אומר מה Tuesday עושה, אף פעם לא מה הוא ישנה. בלי "פי עשר", בלי "לפתוח", בלי "מסע מרגש".
+- משתמש בקול של Tuesday מ-brand-voice.md: מעמית לעמית, הערת-אגב אחת בסוגריים שעושה עבודה אמיתית, בלי באזזוורדס, בלי אימוג'ים, בלי קו-מפריד ארוך. הרגיסטר כאן חם בנימה אחת מהפנייה, אז סימן-קריאה אחד שקט ואמיתי מותר רק אם החום אמיתי.
+- נשאר קצר, מתחת ל-130 מילים, ונסגר על שורה אנושית מאדם, לא מ"צוות המומחים".
+- שורת נושא: פשוטה וקצת יבשה, מהסוג שבאמת היית פותח.
+
+כל הטקסט הנראה-לעין במייל חייב להיות בעברית: שורת הנושא והגוף בעברית. שם המוצר Tuesday ושמות הקבצים נשארים באנגלית.
+
+אז שמור את זה כטיוטה ב-Gmail. אל תשלח. תגיד לי שזה מוכן והצג לי את שורת הנושא והגוף כדי שאקרא קודם.</code></pre>
+    </div>
+
+    <div class="prompt">
+      <div class="prompt__head"><span class="prompt__cmd">/post</span><button type="button" class="copy" data-copy="p-post">העתק</button></div>
+      <pre id="p-post" dir="rtl"><code>/post
+
+בנה פוסט אינסטגרם גמור אחד עבור Tuesday, אפליקציית ניהול-העבודה לעצמאי שמריץ לבד את כל ההצגה. אני רוצה גם את התמונה וגם את הכיתוב, בקול-המותג ומוכנים לפרסום.
+
+קרא את הקבצים המצורפים האלה לפני שמתחילים:
+- brand-voice.md: הנחיות קול-המותג של Tuesday מתחנה 1. זה החוק לקול של הכיתוב.
+- brand-sheet.md: הצבעים, הסמל והטיפוגרפיה של Tuesday. זה החוק לתמונה.
+- social-seed.md: הנושא השבועי ושורות הפוסט לדוגמה. השתמש בו כנקודת פתיחה, אל תעתיק שורת דוגמה מילה במילה.
+
+ויזואל (מפיק-הוויזואל). ייצר תמונה ריבועית אחת ביחס 1:1:
+- רקע: כמעט-שחור, שטוח, בערך #0B0B0B. בלי גרדיאנט, בלי טקסטורה, בלי תצלום.
+- שורת טקסט אחת קצרה, ממורכזת, בעברית, בסאנס גאומטרי כבד באותיות גדולות, בצהוב Tuesday בוהק #FDB913. ריווח-אותיות צפוף, מודגש ומסיבי. השורה מגיעה מההוק של הכיתוב, שמורה קצרה מאוד (שש מילים או פחות).
+- סמל ה-Tiwaz (ᛏ, גזע אנכי עם ראש-חץ כלפי מעלה, כמו חץ למעלה) קטן בצהוב בפינה הימנית-תחתונה. נקי, גאומטרי, לא מרוח גדול.
+- רק שני צבעים על הקנבס: כמעט-שחור וצהוב. בלי צבע שלישי. שוליים נדיבים, שום דבר לא נדחק לקצוות.
+
+כיתוב (כותב-התוכן):
+- הקול של Tuesday מ-brand-voice.md: יבש, אמיתי, מעמית לעמית. פתח מהצד, הערת-אגב אחת בסוגריים שמנחיתה, בלי באזזוורדס, בלי סימני-קריאה, בלי אימוג'ים, בלי קו-מפריד ארוך. כל הכיתוב בעברית.
+- שלוש עד ארבע שורות קצרות, מסיימות על שורה שמחתימה את זה. שורת ההוק צריכה להתאים לטקסט שעל התמונה (שניהם בעברית, זהים).
+- חתימה שקטה אחת שמצביעה על Tuesday (מתחילים חינם, בלי כרטיס), בלי מרק האשטגים. לכל היותר האשטג אחד או שניים פשוטים, אם בכלל.
+
+הצג לי את התמונה ואת הכיתוב יחד כדי שאוכל לוודא שהם נקראים כפוסט אחד לפני שאני מפרסם משהו.</code></pre>
+    </div>
+
+    <div class="prompt">
+      <div class="prompt__head"><span class="prompt__cmd">/carousel</span><button type="button" class="copy" data-copy="p-carousel">העתק</button></div>
+      <pre id="p-carousel" dir="rtl"><code>/carousel
+
+בנה קרוסלת אינסטגרם של חמש שקופיות עבור Tuesday, אפליקציית ניהול העבודה לעצמאי שמריץ לבד את כל העסק. כל חמש השקופיות חייבות להיראות כמו סדרה אחת. מערכת זהה, רק הטקסט משתנה.
+
+קרא קודם את הקבצים המצורפים:
+- brand-sheet.md: הצבעים, הסמל, הטיפוגרפיה והקול של Tuesday.
+- carousel-outline.md: הכותרת ותת-השורה המדויקות לכל אחת מחמש השקופיות.
+
+צור חמש תמונות נפרדות מרובעות, 1:1, 1080x1080, לפי הסדר, משקופית 1 עד שקופית 5.
+
+מערכת ויזואלית מדויקת, מיושמת באופן זהה בכל שקופית:
+- רקע: כמעט-שחור שטוח, hex #0B0B0B, מקצה לקצה. בלי גרדיאנט, בלי טקסטורה, בלי רעש, בלי תצלום, בלי צל מוטל.
+- רק שני צבעים מופיעים בכל מקום על הקנבס: כמעט-שחור #0B0B0B וצהוב Tuesday בהיר #FDB913. בלי לבן, בלי צבע שלישי, בלי אקסנט אחר.
+- כותרת: סאנס גאומטרי כבד, אותיות רישיות, משקל שחור וכבד, מרווח אותיות צפוף, בצהוב #FDB913. ממוקמת במרכז העליון, גדולה, ממלאת את רוב הרוחב עם שוליים נוחים. זה הדבר הרועש ביותר בשקופית. (הטקסט בעברית.)
+- תת-שורה: אותו סאנס גאומטרי, אותיות רישיות, קטנה בהרבה (בערך רבע מגודל הכותרת), בצהוב #FDB913, ממוקמת ישירות מתחת לכותרת עם מרווח ברור. אף פעם לא גדולה מהכותרת. (הטקסט בעברית.)
+- סמל Tiwaz: גזע אנכי אחד עם ראש-חץ פונה מעלה בקצה העליון (הרונה ᛏ, נקראת כחץ-מעלה), משורטט גאומטרי ונקי בצהוב #FDB913, קטן, יושב בפינה הימנית התחתונה של כל שקופית באותו מיקום ובאותו גודל בדיוק. הוא אקסנט, אף פעם לא גדול, אף פעם לא במרכז.
+- שוליים נדיבים ואחידים בכל ארבעת הצדדים. הטקסט ממורכז אופקית. שום דבר לא נוגע בקצוות.
+
+טקסט מדויק לכל שקופית (השתמש במחרוזות האלה verbatim מתוך carousel-outline.md. כותרת למעלה, תת-שורה מתחת). הטקסט על השקופיות בעברית:
+- שקופית 1: כותרת: "אין לך מנהל." תת-שורה: "אתה המנהל. וגם רואה החשבון. וגם זה שמתקן את המדפסת."
+- שקופית 2: כותרת: "אז הכל נמצא בכל מקום." תת-שורה: "הלקוחות בתיבת המייל. החשבוניות באקסל. התוכנית האמיתית בראש שלך, בערך."
+- שקופית 3: כותרת: "מקום אחד ללקוחות." תת-שורה: "מי הם, מה פתוח, כמה הם חייבים. בלי לחפור עוד פעם במייל."
+- שקופית 4: כותרת: "מקום אחד לכסף." תת-שורה: "חשבוניות שיצאו, חשבוניות ששולמו, חשבוניות שעושות כאילו לא ראו. Tuesday סופר."
+- שקופית 5: כותרת: "מתחילים ב-Tuesday." תת-שורה: "חינם. בלי כרטיס, בלי שיחת מכירה. רק הכפתור."
+
+בדיקת עקביות לפני שאתה מסיים: אותו hex רקע, אותו hex צהוב, אותו פונט, אותו גודל כותרת, אותו גודל תת-שורה, אותו סמל Tiwaz באותה פינה בכל חמש השקופיות. אם שקופית כלשהי סוטה, צור מחדש רק את אותה שקופית.
+
+הצג לי את כל חמש השקופיות לפי הסדר כדי שאוכל לוודא שהן נקראות כסדרה אחת לפני שאני מפרסם.</code></pre>
+    </div>
+
+    <div class="prompt">
+      <div class="prompt__head"><span class="prompt__cmd">/reel</span><button type="button" class="copy" data-copy="p-reel">העתק</button></div>
+      <pre id="p-reel" dir="rtl"><code>/reel
+
+צור סרטון אנכי קצר אחד עבור Tuesday, אפליקציית ניהול העבודה לעצמאי שמריץ לבד את כל העסק. יעד 9:16, בערך 15 שניות, דמות AI אחת מדברת למצלמה.
+
+קרא קודם את הקבצים המצורפים:
+- brand-sheet.md: הצבעים, הסמל והקול של Tuesday.
+- character-brief.md: הדמות (Tess), התפאורה, התסריט של 15 השניות, והערות סגנון המותג.
+
+הדמות (מתוך character-brief.md):
+- Tess, אישה באמצע שנות השלושים, אמיתית ולא מלוטשת, עם מראה של עצמאית בארבע אחר הצהריים. לא דוגמנית, לא מבריקה. רגועה, יבשה, קצת עייפה באופן שנקרא ככן. לבוש כהה ושימושי עם פרט קטן אחד בצהוב Tuesday #FDB913 (ספל או סיכה), אף פעם לא תחפושת.
+
+התפאורה:
+- משרד ביתי קטן. חדר כמעט-שחור, hex בערך #0B0B0B, מואר במנורת שולחן חמה אחת. לפטופ על השולחן עם מדבקת Tiwaz צהובה קטנה #FDB913 על המכסה (הרונה ᛏ, גזע אנכי עם ראש-חץ פונה מעלה). חי, לא משרד מהמלאי. עומק שדה רדוד, היא בפוקוס, הרקע רך.
+
+צילום ותנועה:
+- קלוז-אפ בינוני, גובה העיניים, מצלמה נעולה או עם דחיפה איטית מאוד פנימה לאורך 15 השניות. היא יושבת, מדברת ישירות למצלמה, רק תנועות טבעיות קטנות. בלי חיתוכים מהירים, בלי זום מתפרץ, בלי טקסט מסתובב, בלי התרוממות מוזיקלית.
+
+סטיילינג:
+- כל הפריים חי בתוך המותג: כמעט-שחור וגוונים חמים עם אקסנט צהוב יחיד #FDB913. גאומטרי, נקי, מאופק. בלי כתוביות צועקות על המסך, בלי אימוג'ים, בלי אנרגיית סימן-קריאה.
+
+המשפט המדובר (Tess מוסרת אותו שטוח וקצת עייף, הבדיחה היא באמת, לא בהופעה):
+"אין לי מנהל. אנשים כל הזמן מברכים אותי על זה. ברור שהם אף פעם לא היו המנהל, רואה החשבון, ותמיכה טכנית, הכל לפני הצהריים. Tuesday שומר את הלקוחות ואת החשבוניות במקום אחד. ככה אני יכולה לחזור לחלק שבשבילו באמת יצאתי לעצמאות."
+
+הסיום:
+- בפעימה האחרונה, חתוך או התייצב על סמל Tiwaz הצהוב #FDB913 (הרונה ᛏ, חץ-מעלה) על רקע כמעט-שחור, ממורכז, מוחזק בערך שנייה. בלי טקסט tagline אלא אם הוא מתאים בסאנס גאומטרי כבד באותיות רישיות צהובות. אם מוצג, רק המילה "TUESDAY".
+
+הצג לי את הסרטון כדי שאוכל לצפות בו לפני שאני מפרסם משהו.</code></pre>
     </div>
   </section>
 
 </div>
-<footer><div class="wrap foot"><span class="y">TUESDAY</span> — מותג-הדגמה שנבנה לשיעור Benefits, לא מוצר אמיתי.<br>Benefits · קורס AI · יחידה 3.2 — מה זה plugin.</div></footer>
+<footer><div class="wrap foot"><span class="y">TUESDAY</span> — מותג-הדגמה שנבנה לשיעור Benefits, לא מוצר אמיתי. ה-plugin הגנרי עבר ל-<span class="mono" style="background:var(--tue-ink)">brand-studio</span>.<br>Benefits · קורס AI · יחידה 3.2 — מה זה plugin.</div></footer>
 </main>
 
 <!-- ===================== ENGLISH ===================== -->
@@ -200,51 +387,80 @@
 <div class="wrap">
 
   <section class="hero">
-    <div class="eyebrow">Tuesday · One plugin for Cowork</div>
-    <h1>One plugin.<br>Five jobs.<br><span class="y">One look.</span></h1>
-    <p><span class="mono">tuesday-studio</span> is one plugin that does five jobs, in Tuesday's black-and-yellow look, inside Cowork. Hand it a brand pack and it turns raw drafts into finished work.</p>
+    <div class="eyebrow">Tuesday · demo brand pack</div>
+    <h1>The Tuesday<br><span class="y">brand pack.</span></h1>
+    <p>This is the demo pack for the plugin unit, fully in English. Everything here belongs to Tuesday, the work-management app for the one-person company. A teaching brand, not a real product. You work in two linked stations: first you build the brand voice, then you use it to make content. (Want the Hebrew kit? Use the language toggle above.)</p>
     <div class="cta">
-      <a class="tue-btn" href="#en-install">Install it</a>
-      <a class="tue-btn tue-btn--ghost" href="#en-inside">See what's inside</a>
+      <a class="tue-btn" href="#en-s1">Station 1</a>
+      <a class="tue-btn tue-btn--ghost" href="#en-s2">Station 2</a>
     </div>
 
-    <div class="kit">
-      <div class="chip live"><span class="state">Job</span><span class="name">Outreach email</span><p>An on-brand cold email, ready as a Gmail draft.</p><span class="cmd">/outreach</span></div>
-      <div class="chip live"><span class="state">Job</span><span class="name">Welcome email</span><p>A branded welcome email, drafted in Gmail.</p><span class="cmd">/welcome</span></div>
-      <div class="chip live"><span class="state">Job</span><span class="name">Post and reel</span><p>An Instagram image plus caption.</p><span class="cmd">/post</span></div>
-      <div class="chip live"><span class="state">Job</span><span class="name">Branded carousel</span><p>Several slides, the exact same look.</p><span class="cmd">/carousel</span></div>
-      <div class="chip live"><span class="state">Job</span><span class="name">Character video</span><p>A short AI-character reel.</p><span class="cmd">/reel</span></div>
+    <div class="chain">
+      <div class="stationcard">
+        <span class="n">Station 1</span>
+        <h3>Brand voice</h3>
+        <p>Distill one consistent voice from Tuesday's scattered materials, and get a voice-guidelines document.</p>
+      </div>
+      <div class="arrow">→<span class="out">the voice carries over</span></div>
+      <div class="stationcard">
+        <span class="n">Station 2</span>
+        <h3>Real content</h3>
+        <p>Hand that voice to a wider plugin, and it makes an email, a post, a carousel, or a video in Tuesday's look.</p>
+      </div>
     </div>
   </section>
 
-  <section id="en-inside">
-    <div class="eyebrow">tuesday-studio</div>
-    <h2 class="title">What's inside the plugin</h2>
-    <div class="four">
-      <div class="part"><span class="tag">Skills</span><h3>Five — one per job</h3><p>The method. Each skill reads the brand sheet you give it — colors, type, logo, voice — and applies it. Generic: swap the brand pack and it works for another brand.</p></div>
-      <div class="part"><span class="tag">Connectors</span><h3>Two, wired two ways</h3><p><span class="mono">Higgsfield</span> for image and video, wired in <span class="mono">.mcp.json</span>. <span class="mono">Gmail</span> for drafts, turned on once in Connectors. The door to the outside.</p></div>
-      <div class="part"><span class="tag">Commands</span><h3>Five</h3><p>The buttons. <span class="mono">/outreach</span> <span class="mono">/welcome</span> <span class="mono">/post</span> <span class="mono">/carousel</span> <span class="mono">/reel</span> — each one drives the right agent.</p></div>
-      <div class="part"><span class="tag">Sub-agents</span><h3>Two</h3><p>The personas. <span class="mono">content-writer</span> writes the emails and captions; <span class="mono">visual-producer</span> makes the images, the carousel, and the video.</p></div>
-    </div>
-    <p class="wraps">Plugin is the box. It <b>wraps</b> the other three. That is the whole idea.</p>
-  </section>
-
-  <section id="en-install">
-    <div class="eyebrow">Install</div>
-    <h2 class="title">Install it in Cowork</h2>
-    <p class="note" style="margin-bottom:var(--tue-s3)">In Cowork, open <span class="mono">/plugin</span> and run the two lines:</p>
-    <pre><code>/plugin marketplace add benefits-il/tuesday
-/plugin install tuesday-studio@tuesday</code></pre>
-    <p class="note">Add each connector once in your Connectors list (claude.ai: Settings then Connectors · Cowork: Customize then Connectors). <span class="mono">Higgsfield</span> (image and video): choose <b>Add custom connector</b>, name it Higgsfield, paste the URL <span class="mono">https://mcp.higgsfield.ai/mcp</span>, click Connect, and sign in with your Higgsfield account — free, no card, no API key. The plugin already points to this URL in <span class="mono">.mcp.json</span>; this sign-in is what authorizes it. <span class="mono">Gmail</span> (drafts): turn on the built-in connector and sign in. Emails are saved as drafts, never sent.</p>
-  </section>
-
-  <section id="en-play">
-    <div class="eyebrow">How to run it</div>
-    <h2 class="title">Play with it</h2>
+  <section id="en-s1">
+    <div class="eyebrow">Station 1</div>
+    <h2 class="title">Build the brand voice</h2>
+    <p class="note">Install a ready plugin from Claude's library called <span class="mono">brand-voice</span>, hand it Tuesday's scattered materials, and it distills one consistent voice. Everyone does this station.</p>
     <ol class="steps">
-      <li>Download the brand pack below and unzip it.</li>
-      <li>Attach <span class="mono">brand-voice.md</span> (the voice you made with the brand-voice plugin), <span class="mono">brand-sheet.md</span>, and the brief for the job you picked.</li>
-      <li>Copy the ready prompt from <span class="mono">prompts/</span> and paste it. The command drives the agent, the agent the skill, through the connector.</li>
+      <li>In Cowork, go to Customize then Personal plugins, add the library <span class="mono">anthropics/knowledge-work-plugins</span>, and install <span class="mono">brand-voice</span> from it.</li>
+      <li>Download the station 1 pack (below) and open it. Inside is a <span class="mono">raw</span> folder with Tuesday's scattered materials: emails, posts, announcements. Some good, some corporate and dull. That mess is what you distill a voice from.</li>
+      <li>Attach the files from <span class="mono">raw</span> to the chat, and run this prompt (it forces the plugin to work only from the files you attached):</li>
+    </ol>
+    <div class="prompt">
+      <div class="prompt__head"><span class="prompt__cmd">/brand-voice:discover-brand</span><button type="button" class="copy" data-copy="pe-discover">Copy</button></div>
+      <pre id="pe-discover"><code>/brand-voice:discover-brand
+
+Use ONLY the files I attached in this chat. Do not connect to Notion, Google Drive, Slack, or any external source — work strictly from these attached documents. Distill the consistent brand voice and ignore the corporate-sounding noise.</code></pre>
+    </div>
+    <p class="note" style="margin-top:var(--tue-s4)">When it finishes, run <span class="mono">/brand-voice:generate-guidelines</span> and you get a voice-guidelines document. Save it as <span class="mono">brand-voice.md</span>. You'll carry it into station 2.</p>
+
+    <div class="dl-grid">
+      <div class="dlcard">
+        <span class="lede">Station 1 pack · English</span>
+        <h3>The raw materials</h3>
+        <p>The <span class="mono">raw</span> folder only: Tuesday's six scattered materials, in English. This is the input to brand-voice.</p>
+        <span class="file">dist/tuesday-station1-raw-en.zip</span>
+        <a class="btn-dl" href="dist/tuesday-station1-raw-en.zip" download>Download station 1 pack</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="en-s2">
+    <div class="eyebrow">Station 2</div>
+    <h2 class="title">Use the voice</h2>
+    <p class="note">Here you install the generic plugin <span class="mono">brand-studio</span>, hand it the <span class="mono">brand-voice.md</span> you made plus a few files from the pack, and produce real content. This is the full path, and here you meet all four parts together.</p>
+
+    <p class="note" style="margin-top:var(--tue-s3)">Install the plugin (in Cowork, open <span class="mono">/plugin</span>):</p>
+    <pre><code>/plugin marketplace add benefits-il/brand-studio
+/plugin install brand-studio@brand-studio</code></pre>
+    <p class="note" style="margin-top:var(--tue-s3)">Two connectors — add each once in your Connectors list. <span class="mono">Higgsfield</span> (image and video): <b>Add custom connector</b>, name it Higgsfield, paste <span class="mono">https://mcp.higgsfield.ai/mcp</span>, Connect, and sign in with a free account (no card, no API key). <span class="mono">Gmail</span> (drafts): turn on the built-in connector. Emails are saved as drafts, never sent.</p>
+
+    <h3 style="font-family:var(--tue-display);text-transform:uppercase;font-size:1.05rem;margin:var(--tue-s5) 0 var(--tue-s3)">What's inside the plugin</h3>
+    <div class="four">
+      <div class="part"><span class="tag">Skills</span><h3>Five — one per job</h3><p>Each skill reads the brand pack you give it and applies it. Generic: another pack runs it for another brand.</p></div>
+      <div class="part"><span class="tag">Connectors</span><h3>Two, wired two ways</h3><p><span class="mono">Higgsfield</span> is wired in <span class="mono">.mcp.json</span>; <span class="mono">Gmail</span> you turn on in Connectors. The door to the outside.</p></div>
+      <div class="part"><span class="tag">Commands</span><h3>Five</h3><p><span class="mono">/outreach</span> <span class="mono">/welcome</span> <span class="mono">/post</span> <span class="mono">/carousel</span> <span class="mono">/reel</span> — each one drives the right agent.</p></div>
+      <div class="part"><span class="tag">Sub-agents</span><h3>Two</h3><p><span class="mono">content-writer</span> writes emails and captions; <span class="mono">visual-producer</span> makes the images, carousel, and video.</p></div>
+    </div>
+
+    <h3 style="font-family:var(--tue-display);text-transform:uppercase;font-size:1.05rem;margin:var(--tue-s5) 0 var(--tue-s3)">How to run it</h3>
+    <ol class="steps">
+      <li>Download the station 2 pack (below) and open it.</li>
+      <li>Attach <span class="mono">brand-voice.md</span> (the one you made in station 1) plus <span class="mono">brand-sheet.md</span> plus the brief for the job you picked.</li>
+      <li>Copy the matching prompt from the blocks below, paste it, and run. The command drives the agent, the agent the skill, through the connector.</li>
     </ol>
     <table class="jobs">
       <thead><tr><th>Command</th><th>What you get</th><th>Brief in the pack</th></tr></thead>
@@ -256,20 +472,163 @@
         <tr><td><span class="mono">/reel</span></td><td>Short AI-character video</td><td><span class="mono">character-brief.md</span></td></tr>
       </tbody>
     </table>
-    <p class="note">Higgsfield's free tier is mediocre by default (basic model plus a watermark). The lever for quality is a precise visual prompt — exactly what the agent builds for you from the brand sheet. Want clean, HD, no watermark? A Higgsfield subscription (about $15/month) is optional.</p>
+
+    <div class="dl-grid">
+      <div class="dlcard">
+        <span class="lede">Station 2 pack · English</span>
+        <h3>The brand pack</h3>
+        <p>The brand sheet, the visual brief, and the five briefs — one per job, in English. The data you run the plugin on.</p>
+        <span class="file">dist/tuesday-station2-brand-pack-en.zip</span>
+        <a class="btn-dl" href="dist/tuesday-station2-brand-pack-en.zip" download>Download station 2 pack</a>
+        <p class="backup-note">The pack has a <span class="mono">backup</span> folder with a ready <span class="mono">brand-voice.md</span>. That's a fallback, only if you got stuck in station 1. The real way is to generate your own — that's the whole point of the chain.</p>
+      </div>
+    </div>
+    <p class="note" style="margin-top:var(--tue-s4)">Higgsfield's free tier is mediocre by default (basic model plus a watermark). The lever for quality is a precise visual prompt — exactly what <span class="mono">visual-producer</span> builds for you from the brand sheet. Want clean, HD, no watermark? A Higgsfield subscription (about $15/month) is optional.</p>
   </section>
 
-  <section id="en-download" style="border-bottom:none;">
-    <div class="eyebrow">The data</div>
-    <h2 class="title">Tuesday brand pack</h2>
-    <div class="dl">
-      <div class="meta"><b>Tuesday brand pack</b><span>brand sheet plus raw materials plus the five ready prompts</span></div>
-      <a class="btn-dark" href="dist/tuesday-brand.zip" download>Download .zip</a>
+  <section id="en-prompts" style="border-bottom:none;">
+    <div class="eyebrow">The prompts</div>
+    <h2 class="title">The five ready prompts</h2>
+    <p class="note">Each prompt is ready to copy and produces English content. Install brand-studio, attach <span class="mono">brand-voice.md</span> plus <span class="mono">brand-sheet.md</span> plus the brief, copy the matching prompt, and paste it into Cowork.</p>
+
+    <div class="prompt">
+      <div class="prompt__head"><span class="prompt__cmd">/outreach</span><button type="button" class="copy" data-copy="pe-outreach">Copy</button></div>
+      <pre id="pe-outreach"><code>/outreach
+
+You are writing one short cold outreach email for Tuesday, the work-management app for solo people running the whole show.
+
+Read these attached files before writing:
+- brand-voice.md: the Tuesday voice guidelines you generated in station 1. This is the law for how it sounds.
+- brand-sheet.md: Tuesday's facts, colors, and mark.
+- outreach-context.md: who this email is for, the ask, and the one key message it must carry.
+- raw/feature-announcement.md: the "Tasks 2.0" corporate blast. Read it ONLY to pull out the one real, useful fact buried in the jargon. Do not copy a word of its tone. That tone is exactly what you are rescuing this message from.
+
+Recipient: (replace with name, role, and how they found us, e.g. "Maya, freelance brand designer, found us via a newsletter").
+
+Write the email so it:
+- Opens from the side, not on the product. A relation, a small true scene of the solo grind, never "I wanted to reach out about Tuesday."
+- Lands the one key message from outreach-context.md plainly: clients, projects, invoices in one place, it won't do the work, it stops you losing the thread, start free with no card and no demo call.
+- Carries Tuesday's voice from brand-voice.md: dry, direct, peer to peer, a little self-aware. Use one parenthetical aside that does real work. No buzzwords, no exclamation marks, no emojis, no em-dashes.
+- Stays short. Under 130 words. A subject line that earns the open without hype.
+- Closes on a line that lands and a single clear reason to click, not a "don't miss out."
+
+Then save it as a Gmail draft addressed to the recipient. Do not send it. Tell me the draft is ready and show me the subject line and body so I can read it before it goes anywhere.</code></pre>
+    </div>
+
+    <div class="prompt">
+      <div class="prompt__head"><span class="prompt__cmd">/welcome</span><button type="button" class="copy" data-copy="pe-welcome">Copy</button></div>
+      <pre id="pe-welcome"><code>/welcome
+
+You are writing the welcome email a brand-new Tuesday user gets the minute they create an account. Tuesday is the work-management app for solo people running the whole show.
+
+Read these attached files before writing:
+- brand-voice.md: the Tuesday voice guidelines you generated in station 1. Hold it the whole time.
+- brand-sheet.md: Tuesday's facts, colors, and mark.
+- welcome-points.md: what to welcome them about, the one first step, the tone cue, and what NOT to promise.
+
+Write the email so it:
+- Opens warm but dry. They already said yes, so do not sell. A line that meets them where they are (staring at an empty workspace), not "we're thrilled to have you on this journey."
+- Names the real win from welcome-points.md without a parade: they moved their business out of the three-apps-and-a-notes-file life.
+- Gives exactly ONE first step: add your first client. One client. Make clear there's no fourteen-step wizard, there's a button, they'll find it.
+- Says what Tuesday does, never what it'll transform. No "10x," no "unlock," no "exciting journey."
+- Uses Tuesday's voice from brand-voice.md: peer to peer, one parenthetical aside doing real work, no buzzwords, no emojis, no em-dashes. This register is a notch warmer than outreach, so one genuine, quiet exclamation is allowed only if the warmth is real.
+- Stays short, under 130 words, and closes on a human line from a person, not "the team of experts."
+- Subject line: plain and a little dry, the kind you'd actually open.
+
+Then save it as a Gmail draft. Do not send it. Tell me it's ready and show me the subject line and body so I can read it first.</code></pre>
+    </div>
+
+    <div class="prompt">
+      <div class="prompt__head"><span class="prompt__cmd">/post</span><button type="button" class="copy" data-copy="pe-post">Copy</button></div>
+      <pre id="pe-post"><code>/post
+
+Build one finished Instagram post for Tuesday, the work-management app for solo people running the whole show. I want both the image and the caption, on brand and ready to publish.
+
+Read these attached files before starting:
+- brand-voice.md: the Tuesday voice guidelines from station 1. This is the law for the caption's voice.
+- brand-sheet.md: Tuesday's colors, mark, and type. This is the law for the image.
+- social-seed.md: this week's topic and the sample post lines. Use it as the starting point, do not copy a sample line word for word.
+
+VISUAL (visual-producer). Generate one square 1:1 image:
+- Background: near-black, flat, around #0B0B0B. No gradient, no texture, no photo.
+- One short line of text, centered, in heavy geometric uppercase sans, bright Tuesday yellow #FDB913. Tight letter-spacing, bold and blocky. The line comes from the caption's hook, kept very short (six words or fewer).
+- The Tiwaz mark (a vertical stem with an up-arrow head, like an upward arrow) small in yellow in the bottom-right corner. Clean, geometric, not plastered large.
+- Only two colors on the canvas: near-black and yellow. No third color. Generous margins, nothing crowding the edges.
+
+CAPTION (content-writer):
+- Tuesday's voice from brand-voice.md: dry, true, peer to peer. Open from the side, one parenthetical aside that lands, no buzzwords, no exclamation marks, no emojis, no em-dashes.
+- Three to four short lines, ending on a line that stamps it. The hook line should match the text on the image.
+- One quiet sign-off pointing to Tuesday (start free, no card), no hashtag soup. At most one or two plain hashtags if any.
+
+Show me the image and the caption together so I can check they read as one post before I publish anything.</code></pre>
+    </div>
+
+    <div class="prompt">
+      <div class="prompt__head"><span class="prompt__cmd">/carousel</span><button type="button" class="copy" data-copy="pe-carousel">Copy</button></div>
+      <pre id="pe-carousel"><code>/carousel
+
+Build a 5-slide Instagram carousel for Tuesday, the work-management app for solo people running the whole show. All five slides must look like one set: identical system, only the text changes.
+
+Read these attached files first:
+- brand-sheet.md: Tuesday's colors, mark, type, and voice.
+- carousel-outline.md: the exact headline and sub-line for each of the five slides.
+
+Generate FIVE separate square images, 1:1, 1080x1080, in order, slide 1 through slide 5.
+
+EXACT VISUAL SYSTEM, applied identically to every slide:
+- Background: flat near-black, hex #0B0B0B, edge to edge. No gradient, no texture, no noise, no photograph, no drop shadow.
+- Only two colors appear anywhere on the canvas: near-black #0B0B0B and bright Tuesday yellow #FDB913. No white, no third color, no other accent.
+- Headline: heavy geometric sans-serif, all uppercase, black/heavy weight, tight letter-spacing, in yellow #FDB913. Placed in the upper-center, large, filling most of the width with a comfortable margin. This is the loudest thing on the slide.
+- Sub-line: same geometric sans, uppercase, much smaller (about one quarter the headline size), in yellow #FDB913, placed directly under the headline with clear spacing. Never larger than the headline.
+- The Tiwaz mark: a single vertical stem with an upward arrowhead at the top, drawn geometric and clean in yellow #FDB913, small, sitting in the bottom-right corner of every slide in the exact same position and size. It is an accent, never large, never centered.
+- Generous even margins on all four sides. Text centered horizontally. Nothing touches the edges.
+
+EXACT TEXT PER SLIDE (use these strings verbatim from carousel-outline.md; headline on top, sub-line below):
+- Slide 1: headline: "YOU DON'T HAVE A MANAGER." sub: "You are one. And the accountant. And the guy who fixes the printer."
+- Slide 2: headline: "SO EVERYTHING LIVES EVERYWHERE." sub: "Clients in your inbox. Invoices in a spreadsheet. The actual plan in your head, mostly."
+- Slide 3: headline: "ONE PLACE FOR CLIENTS." sub: "Who they are, what is open, what they owe. No more digging through email."
+- Slide 4: headline: "ONE PLACE FOR MONEY." sub: "Invoices sent, invoices paid, invoices pretending they didn't see it. Tuesday keeps score."
+- Slide 5: headline: "START TUESDAY." sub: "Free. No card, no demo call. Just the button."
+
+Consistency check before you finish: same background hex, same yellow hex, same font, same headline size, same sub-line size, same Tiwaz mark in the same corner on all five. If any slide drifts, regenerate that slide only.
+
+Show me all five slides in order so I can confirm they read as one set before I publish.</code></pre>
+    </div>
+
+    <div class="prompt">
+      <div class="prompt__head"><span class="prompt__cmd">/reel</span><button type="button" class="copy" data-copy="pe-reel">Copy</button></div>
+      <pre id="pe-reel"><code>/reel
+
+Generate one short vertical video for Tuesday, the work-management app for solo people running the whole show. Target 9:16, about 15 seconds, a single AI character talking to camera.
+
+Read these attached files first:
+- brand-sheet.md: Tuesday's colors, mark, and voice.
+- character-brief.md: the character (Tess), the setting, the 15-second script, and the brand-style notes.
+
+CHARACTER (from character-brief.md):
+- Tess, a woman in her mid-thirties, real and unpolished, the look of a freelancer at 4 PM. Not a model, not glossy. Calm, dry, slightly tired in a way that reads as honest. Dark utilitarian clothing with one small detail in Tuesday yellow #FDB913 (a mug or a pin), never a costume.
+
+SETTING:
+- A small home office. Near-black room, hex around #0B0B0B, lit by one warm desk lamp. A laptop on the desk with a small yellow #FDB913 Tiwaz sticker on the lid. Lived-in, not a stock office. Shallow depth of field, she is in focus, the background soft.
+
+SHOT AND MOTION:
+- Medium close-up, eye level, camera locked or with a very slight slow push-in over the 15 seconds. She is seated, talking directly to camera, small natural movements only. No fast cuts, no zoom-burst, no spinning text, no music swell.
+
+STYLING:
+- The whole frame lives in the brand: near-black and warm tones with the single yellow #FDB913 accent. Geometric, clean, restrained. No on-screen captions shouting, no emojis, no exclamation-mark energy.
+
+SPOKEN LINE (Tess delivers this flat and a little tired, the joke is in the truth, not the performance):
+"I don't have a manager. People keep congratulating me on that. They have clearly never been the manager, the accountant, and IT support before lunch. Tuesday keeps the clients and the invoices in one place. So I can go back to the part I actually went freelance for."
+
+ENDING:
+- On the final beat, cut or settle to the yellow #FDB913 Tiwaz mark on a near-black background, centered, held for about one second. No tagline text unless it fits in heavy geometric uppercase yellow; if shown, only the word "TUESDAY."
+
+Show me the video so I can watch it before I post anything.</code></pre>
     </div>
   </section>
 
 </div>
-<footer><div class="wrap foot"><span class="y">TUESDAY</span> — a teaching brand built for a Benefits lesson, not a real product.<br>Benefits · AI course · Unit 3.2 — what a plugin is.</div></footer>
+<footer><div class="wrap foot"><span class="y">TUESDAY</span> — a teaching brand built for a Benefits lesson, not a real product. The generic plugin moved to <span class="mono" style="background:var(--tue-ink)">brand-studio</span>.<br>Benefits · AI course · Unit 3.2 — what a plugin is.</div></footer>
 </main>
 
 <script>
@@ -296,6 +655,29 @@
       saved = (qp === 'en' || qp === 'he') ? qp : (localStorage.getItem('benefits-lang') || 'he');
     } catch(e){}
     setLang(saved);
+
+    // copy buttons
+    document.querySelectorAll('.copy').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var el = document.getElementById(btn.dataset.copy);
+        if (!el) return;
+        var text = el.innerText;
+        var label = btn.textContent;
+        var done = function(){
+          btn.classList.add('done');
+          btn.textContent = (document.documentElement.lang === 'en') ? 'Copied' : 'הועתק';
+          setTimeout(function(){ btn.classList.remove('done'); btn.textContent = label; }, 1400);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done, function(){});
+        } else {
+          var r = document.createRange(); r.selectNode(el);
+          var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+          try { document.execCommand('copy'); done(); } catch(e){}
+          s.removeAllRanges();
+        }
+      });
+    });
   })();
 </script>
 </body>

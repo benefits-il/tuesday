@@ -1,6 +1,6 @@
 # /reel (short AI-character video for Tuesday)
 
-Paste this into Cowork with the Tuesday plugin installed and the brand pack attached. The video prompt is fully specified: character, setting, motion, styling, and the exact spoken line. A free-tier video model needs all of it pinned, so nothing here is left open.
+Paste this into Cowork with brand-studio installed and the Tuesday brand pack attached. The video prompt is fully specified: character, setting, motion, styling, and the exact spoken line. A free-tier video model needs all of it pinned, so nothing here is left open.
 
 ---
 

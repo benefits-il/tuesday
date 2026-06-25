@@ -1,6 +1,6 @@
 # /welcome (new-user welcome email, saved as a Gmail draft)
 
-Paste this into Cowork with the Tuesday plugin installed and the brand pack attached. It writes the welcome email a brand-new user gets the moment they sign up, and saves it to your Gmail drafts.
+Paste this into Cowork with brand-studio installed and the Tuesday brand pack attached. It writes the welcome email a brand-new user gets the moment they sign up, and saves it to your Gmail drafts.
 
 ---
 

@@ -1,6 +1,6 @@
 # /post (one Instagram post: image plus caption)
 
-Paste this into Cowork with the Tuesday plugin installed and the brand pack attached. The visual-producer builds the image, the content-writer writes the caption, and they come back as one finished post.
+Paste this into Cowork with brand-studio installed and the Tuesday brand pack attached. The visual-producer builds the image, the content-writer writes the caption, and they come back as one finished post.
 
 ---
 

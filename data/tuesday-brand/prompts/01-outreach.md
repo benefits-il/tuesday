@@ -1,6 +1,6 @@
 # /outreach (cold outreach email, saved as a Gmail draft)
 
-Paste this into Cowork with the Tuesday plugin installed and the brand pack attached. It runs the content-writer and saves the result straight to your Gmail drafts. Swap the placeholder in parentheses for your recipient details.
+Paste this into Cowork with brand-studio installed and the Tuesday brand pack attached. It runs the content-writer and saves the result straight to your Gmail drafts. Swap the placeholder in parentheses for your recipient details.
 
 ---
 
