@@ -199,7 +199,7 @@
 
     <h3 style="font-family:var(--tue-display);text-transform:uppercase;font-size:1.05rem;margin:var(--tue-s5) 0 var(--tue-s3)">מה יש בתוך ה-plugin</h3>
     <div class="four">
-      <div class="part"><span class="tag">סקילים</span><h3>חמישה, אחד לכל מלאכה</h3><p>כל סקיל קורא את ערכת-המותג שאתם נותנים ומחיל אותה. גנרי: ערכה אחרת מפעילה אותו על מותג אחר.</p></div>
+      <div class="part"><span class="tag">סקילים</span><h3>חמישה, אחד לכל משימה</h3><p>כל סקיל קורא את ערכת-המותג שאתם נותנים ומחיל אותה. גנרי: ערכה אחרת מפעילה אותו על מותג אחר.</p></div>
       <div class="part"><span class="tag">חיבורים</span><h3>שניים, בשתי דרכים</h3><p><span class="mono">Higgsfield</span> מחווט ב-<span class="mono">.mcp.json</span>; <span class="mono">Gmail</span> מדליקים ב-Connectors. הדלת אל מה שבחוץ.</p></div>
       <div class="part"><span class="tag">פקודות</span><h3>חמש</h3><p><span class="mono">/outreach</span> <span class="mono">/welcome</span> <span class="mono">/post</span> <span class="mono">/carousel</span> <span class="mono">/reel</span> — כל פקודה מפעילה את הסוכן הנכון.</p></div>
       <div class="part"><span class="tag">סוכנים</span><h3>שניים</h3><p><span class="mono">content-writer</span> כותב מיילים וכיתובים; <span class="mono">visual-producer</span> מפיק תמונות, קרוסלה וסרטון.</p></div>
@@ -208,7 +208,7 @@
     <h3 style="font-family:var(--tue-display);text-transform:uppercase;font-size:1.05rem;margin:var(--tue-s5) 0 var(--tue-s3)">מה מריצים</h3>
     <ol class="steps">
       <li>מורידים את חבילת תחנה 2 (למטה) ופותחים אותה.</li>
-      <li>מצרפים לשיחה ב-Cowork את <span class="mono">brand-voice.md</span> (שיצרתם בתחנה 1) plus <span class="mono">brand-sheet.md</span> plus את הבריף של המלאכה שבחרתם.</li>
+      <li>מצרפים לשיחה ב-Cowork את <span class="mono">brand-voice.md</span> (שיצרתם בתחנה 1) plus <span class="mono">brand-sheet.md</span> plus את הבריף של המשימה שבחרתם.</li>
       <li>מעתיקים את הפרומפט המתאים מהבלוקים שלמטה, מדביקים, ומריצים. הפקודה מפעילה את הסוכן, הסוכן את הסקיל, דרך החיבור.</li>
     </ol>
     <table class="jobs">
@@ -226,7 +226,7 @@
       <div class="dlcard">
         <span class="lede">חבילת תחנה 2 · עברית</span>
         <h3>ערכת-המותג</h3>
-        <p>דף-המותג, הבריף הוויזואלי, וחמשת הבריפים — אחד לכל מלאכה, בעברית. הדאטה שמריצים עליה את ה-plugin.</p>
+        <p>דף-המותג, הבריף הוויזואלי, וחמשת הבריפים — אחד לכל משימה, בעברית. הדאטה שמריצים עליה את ה-plugin.</p>
         <span class="file">dist/tuesday-station2-brand-pack-he.zip</span>
         <a class="btn-dl" href="dist/tuesday-station2-brand-pack-he.zip" download>הורדת חבילת תחנה 2</a>
         <p class="backup-note">בתוך החבילה יש תיקיית <span class="mono">backup</span> עם <span class="mono">brand-voice.md</span> מוכן. זה גיבוי, רק למי שנתקע בתחנה 1. הדרך הנכונה היא לייצר אותו בעצמכם, זה כל הקסם של השרשרת.</p>
@@ -235,7 +235,7 @@
     <p class="note" style="margin-top:var(--tue-s4)">ה-free של Higgsfield מוציא בינוני (מודל בסיסי plus watermark). המנוף לאיכות הוא פרומפט ויזואלי מדויק — בדיוק מה ש-<span class="mono">visual-producer</span> בונה לכם מדף-המותג. מי שרוצה נקי ו-HD: מנוי Higgsfield (בערך 15 דולר לחודש), אופציונלי.</p>
   </section>
 
-  <section id="he-prompts" style="border-bottom:none;">
+  <section id="he-prompts">
     <div class="eyebrow">הפרומפטים</div>
     <h2 class="title">חמשת הפרומפטים המוכנים</h2>
     <p class="note">כל פרומפט מוכן להעתקה ומפיק תוכן בעברית. מתקינים את brand-studio, מצרפים <span class="mono">brand-voice.md</span> plus <span class="mono">brand-sheet.md</span> plus הבריף, מעתיקים את הפרומפט המתאים, ומדביקים ב-Cowork.</p>
@@ -380,6 +380,111 @@
     </div>
   </section>
 
+  <section id="he-point-power" style="border-bottom:none;">
+    <div class="eyebrow">מצגות · Point ← POWER</div>
+    <h2 class="title">מצגות · Point ← POWER</h2>
+    <p class="note">שלוש ערכות לתרגול בניית מצגת עם הצמד Point ← POWER. כל ערכה היא ערימת חומרים מבולגנת בכוונה, חלק אות וחלק רעש, בדיוק כמו תיקייה אמיתית שאף אחד לא סידר. מצרפים את כל הקבצים, נותנים ל-Point לסנן ולרואיין, ואז POWER בונה את התוצר. שתי הראשונות הן הדגמות שהמורה מריץ מקדימה, השלישית היא תרגול שאתם מריצים בעצמכם. (רוצים את הערכות באנגלית? יש מתג שפה למעלה.)</p>
+
+    <div class="dl-grid" style="grid-template-columns:1fr 1fr 1fr;">
+      <div class="dlcard">
+        <span class="lede">DEMO · מצגת משקיעים</span>
+        <h3>ערכת המשקיעים</h3>
+        <p>ערימת החומרים של TUESDAY לסבב Seed: שוק, מוצר, traction, מתחרים, הבקשה, ועוד כמה קבצים שנפלו לתיקייה בטעות. המורה מדגים איך Point מזקק מזה מבנה מצגת אמיתי.</p>
+        <span class="file">dist/tuesday-pitch-pack-he.zip</span>
+        <a class="btn-dl" href="dist/tuesday-pitch-pack-he.zip" download>הורדת ערכת המשקיעים</a>
+      </div>
+      <div class="dlcard">
+        <span class="lede">DEMO · מצגת onboarding</span>
+        <h3>ערכת ה-onboarding</h3>
+        <p>ערימת הקליטה של עובד חדש ב-TUESDAY: פתקי ברוכים-הבאים, ערכים, צ'קליסט, היכרות עם הצוות, וקצת רעש משרדי. המורה מדגים, וזה הרגע שבו פוגשים HTML בפעם הראשונה: POWER הופך את המבנה לעמוד מונפש.</p>
+        <span class="file">dist/tuesday-onboarding-pack-he.zip</span>
+        <a class="btn-dl" href="dist/tuesday-onboarding-pack-he.zip" download>הורדת ערכת ה-onboarding</a>
+      </div>
+      <div class="dlcard">
+        <span class="lede">PRACTICE · ניתוח-שוק BI</span>
+        <h3>ערכת ניתוח-השוק</h3>
+        <p>ערימת העבודה של מחלקת ה-BI, שמכריעה החלטה אחת: להמשיך לפתח את "משימות 2.0" או לעצור. הנתונים לא חד-משמעיים בכוונה. את זאת אתם מריצים בעצמכם, מסננים, ובונים מצגת שנשענת על הנתונים בלבד.</p>
+        <span class="file">dist/tuesday-bi-practice-he.zip</span>
+        <a class="btn-dl" href="dist/tuesday-bi-practice-he.zip" download>הורדת ערכת ניתוח-השוק</a>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--tue-display);text-transform:uppercase;font-size:1.05rem;margin:var(--tue-s5) 0 var(--tue-s3)">מצגת משקיעים · הפרומפט ל-Point</h3>
+    <p class="note">מצרפים את כל הקבצים מהערכה, מדביקים את הפרומפט הזה ב-Point, והוא מרואיין ואז מפיק מסמך מבנה. את ה-handoff מעבירים אחר כך ל-POWER, שם היעד הוא PowerPoint דרך Claude-in-PowerPoint.</p>
+    <div class="prompt">
+      <div class="prompt__head"><span class="prompt__cmd">Point · מצגת משקיעים</span><button type="button" class="copy" data-copy="p-pitch">העתק</button></div>
+      <pre id="p-pitch" dir="rtl"><code>המטרה: מצגת משקיעים ל-TUESDAY, סבב Seed מוקדם.
+
+TUESDAY היא תוכנה לניהול עבודה לחברה של איש אחד, האנטי-מאנדיי. הקהל של המצגת הוא משקיעים, סבב seed. אני רוצה דק שמספר סיפור משכנע ונשען על המספרים והמתחרים, לא רשימת פיצ'רים.
+
+צירפתי תיקייה של חומרים. שים לב, היא מבולגנת בכוונה. יש בה מסמכים רלוונטיים מאוד, ויש בה כמה קבצים שאין להם שום קשר למצגת משקיעים. תפקידך הראשון הוא לעבור על הערימה, לזהות מה אות ומה רעש, ולהתעלם מהרעש.
+
+קודם תראיין אותי. שאל אותי את מה שחסר לך כדי לבנות מבנה מצגת חזק: מה הסיפור המרכזי שאני רוצה להעביר, מי בדיוק יושב מולי בחדר, מה הדבר האחד שאני רוצה שיזכרו, מה הסיכון שאני הכי חושש שישאלו עליו, וכל מספר שצריך אימות. אל תתחיל לבנות לפני שענית לעצמך על אלה דרכי.
+
+אחרי הראיון, הפק מסמך handoff של מבנה המצגת ב-Markdown: רשימת שקפים לפי הסדר, ולכל שקף הכותרת, הנקודה המרכזית, ומה התוכן עליו (טקסט, מספר, ציטוט, או גרף). סמן באיזה מקור בערימה נשענת כל נקודה. אל תפיק את המצגת המעוצבת עצמה, רק את המבנה. POWER יבנה ממנו אחר כך.
+
+שמור על הקול של TUESDAY: יבש, ישיר, מדבר אל המשקיע כמו אל בן אדם, בלי באזוורדס ובלי סימני קריאה. עברית מלאה, בלי לערבב עברית ואנגלית בתוך משפט.</code></pre>
+    </div>
+
+    <h3 style="font-family:var(--tue-display);text-transform:uppercase;font-size:1.05rem;margin:var(--tue-s5) 0 var(--tue-s3)">מצגת onboarding · שני שלבים</h3>
+    <p class="note">שלב א ב-Point בונה את המבנה מתוך הערימה. שלב ב ב-POWER הופך אותו לעמוד HTML מונפש, וזה הרגע שבו פוגשים HTML בפעם הראשונה.</p>
+    <div class="prompt">
+      <div class="prompt__head"><span class="prompt__cmd">Point · onboarding (שלב א)</span><button type="button" class="copy" data-copy="p-onb-point">העתק</button></div>
+      <pre id="p-onb-point" dir="rtl"><code>המטרה: מצגת onboarding כיפית לעובד חדש ב-TUESDAY.
+
+צירפתי לך תיקייה שלמה של חומרים שאספתי על החברה. זה בלגן. יש שם פתקי קליטה, מסמך ערכים, צ'קליסט, רשימת כלים, היכרות עם הצוות, תנאים, ותזכורת מותג. יש שם גם כמה דברים שאין להם שום קשר ל-onboarding, פשוט נפלו לאותה תיקייה. אני סומך עליך שתזהה מה רלוונטי ומה לא.
+
+לפני שאתה מתחיל לבנות, תראיין אותי. תשאל אותי כמה שאלות קצרות כדי להבין מה הכי חשוב לי שהעובד החדש ירגיש ויידע ביום הראשון, מה הטון, וכמה שקפים אני רוצה. אל תייצר כלום לפני שעניתי.
+
+אחרי שתבין, תפיק לי מסמך handoff אחד בלבד, בפורמט MD, שמתאר את מבנה המצגת שקף-אחר-שקף. לכל שקף: כותרת, תוכן קצר, והערה אם צריך ויזואל מסוים. אל תכתוב עדיין HTML ואל תעצב, רק את המבנה והתוכן.
+
+הקפד על קול המותג מתוך תזכורת המותג שצירפתי. יבש, ישיר, כמו עמית. בלי סימני קריאה, בלי באזוורדס, בלי גלוס תאגידי. צהוב, שחור ולבן בלבד.</code></pre>
+    </div>
+    <div class="prompt">
+      <div class="prompt__head"><span class="prompt__cmd">POWER · onboarding (שלב ב)</span><button type="button" class="copy" data-copy="p-onb-power">העתק</button></div>
+      <pre id="p-onb-power" dir="rtl"><code>קח את מסמך מבנה המצגת שבנינו והפוך אותו לעמוד HTML אחד, עצמאי, כיפי ומונפש לקליטה של עובד חדש ב-TUESDAY.
+
+שיהיה חגיגי ומרגיש כמו ברוך הבא אמיתי. קונפטי בכניסה, מעט תנועה, מעברים רכים בין הקטעים בגלילה, אלמנטים שמופיעים בעדינות. לא רעשני מדי, אבל שירגיש חי.
+
+נצמד למותג. צהוב #FDB913, שחור #0B0B0B, לבן. אין צבע שלישי. טיפוגרפיה כבדה, גאומטרית, אותיות גדולות. הסמל הוא הרונה Tiwaz בצהוב, כאקסנט קטן.
+
+קובץ אחד, הכל מוטמע בפנים, נפתח בכל דפדפן בלי תלות בשום דבר חיצוני.</code></pre>
+    </div>
+
+    <h3 style="font-family:var(--tue-display);text-transform:uppercase;font-size:1.05rem;margin:var(--tue-s5) 0 var(--tue-s3)">ניתוח-שוק BI · שני שלבים</h3>
+    <p class="note">שלב א ב-Point מסנן את הערימה, מרואיין, ובונה מבנה מאוזן. שלב ב ב-POWER מפיק את המצגת. בוחרים יעד אחד וסגנון אחד.</p>
+    <div class="prompt">
+      <div class="prompt__head"><span class="prompt__cmd">Point · ניתוח-שוק (שלב א)</span><button type="button" class="copy" data-copy="p-bi-point">העתק</button></div>
+      <pre id="p-bi-point" dir="rtl"><code>אתה מחלקת ה-BI של חברת TUESDAY, חברת תוכנה לניהול עבודה לעצמאי ולעסק של איש אחד.
+
+המטרה: לבנות מצגת ניתוח שוק של מחלקת ה-BI שמכריעה החלטה אחת — האם משתלם להמשיך לפתח את המוצר, ובפרט להמשיך להשקיע בפיצ'ר "משימות 2.0", או לעצור.
+
+צירפתי תיקיית עבודה אמיתית ומבולגנת. יש בה מסמכים מסוגים שונים. חלקם רלוונטיים להחלטה וחלקם רעש שלא קשור אליה. המשימה הראשונה שלך היא לסנן: עבור על הכול, החלט מה רלוונטי ומה לזרוק, ואמור לי בקצרה מה כללת ומה השארת בחוץ ולמה.
+
+אחרי שסיננת, אל תקפוץ ישר למצגת. רואיין אותי קודם. שאל אותי שאלות ממוקדות שיעזרו לחדד את המצגת: מי הקהל, כמה שקפים, איזו עמדה המצגת אמורה להוביל אם הנתונים מצדיקים אותה, ומה רמת הפירוט. שאלה אחת בכל פעם.
+
+הנתונים לא חד-משמעיים. חלק מהאותות תומכים בהמשך הפיתוח וחלק תומכים בעצירה. אל תייפה ואל תכריע מראש. המצגת צריכה להציג טיעון אמיתי ומאוזן ולהוביל למסקנה שנשענת על הנתונים בלבד.
+
+בסוף, הפק מסמך Markdown אחד עם מבנה המצגת: כותרת לכל שקף, נקודות התוכן של כל שקף, ואיזה נתון או מסמך מהתיקייה תומך בכל שקף. זה מסמך המסירה שאעביר לשלב ההפקה. אל תעצב מצגת בשלב הזה — רק את המבנה.
+
+כתוב הכול בעברית. חצים פונים שמאלה. בלי אימוג'ים. משפטים מלאים, בלי לערבב עברית ואנגלית באותו משפט.</code></pre>
+    </div>
+    <div class="prompt">
+      <div class="prompt__head"><span class="prompt__cmd">POWER · ניתוח-שוק (שלב ב)</span><button type="button" class="copy" data-copy="p-bi-power">העתק</button></div>
+      <pre id="p-bi-power" dir="rtl"><code>קח את מבנה המצגת ב-Markdown שיצרת בשלב הקודם והפק ממנו מצגת מלאה.
+
+יעד: [בחרו אחד — PowerPoint, או Google Slides].
+
+סגנון עיצוב: [בחרו אחד מהשלישייה — מינימלי ונקי / נתונים וגרפים במרכז / מנהלים ומסר חד].
+
+מותג TUESDAY: צהוב #FDB913, שחור #0B0B0B, לבן לטקסט על רקע שחור. בלי צבע שלישי. טיפוגרפיה כבדה, גאומטרית, אותיות גדולות. הסימן הוא רונה Tiwaz בצהוב, אקסנט קטן ולא מודפס על הכול.
+
+הקפד שכל שקף יישען על הנתון או המסמך שצוין לו במבנה. אל תמציא מספרים חדשים — השתמש רק במה שהיה בתיקייה. בסוף, השקף האחרון מציג את ההכרעה ואת הנימוק שלה.
+
+עברית. חצים שמאלה. בלי אימוג'ים. משפטים מלאים בלשון עניינית ופורמלית, בלי לפנות בגוף שני.</code></pre>
+    </div>
+  </section>
+
 </div>
 <footer><div class="wrap foot"><span class="y">TUESDAY</span> — מותג-הדגמה שנבנה לשיעור Benefits, לא מוצר אמיתי. ה-plugin הגנרי עבר ל-<span class="mono" style="background:var(--tue-ink)">brand-studio</span>.<br>Benefits · קורס AI · יחידה 3.2 — מה זה plugin.</div></footer>
 </main>
@@ -490,7 +595,7 @@ Use ONLY the files I attached in this chat. Do not connect to Notion, Google Dri
     <p class="note" style="margin-top:var(--tue-s4)">Higgsfield's free tier is mediocre by default (basic model plus a watermark). The lever for quality is a precise visual prompt — exactly what <span class="mono">visual-producer</span> builds for you from the brand sheet. Want clean, HD, no watermark? A Higgsfield subscription (about $15/month) is optional.</p>
   </section>
 
-  <section id="en-prompts" style="border-bottom:none;">
+  <section id="en-prompts">
     <div class="eyebrow">The prompts</div>
     <h2 class="title">The five ready prompts</h2>
     <p class="note">Each prompt is ready to copy and produces English content. Install brand-studio, attach <span class="mono">brand-voice.md</span> plus <span class="mono">brand-sheet.md</span> plus the brief, copy the matching prompt, and paste it into Cowork.</p>
@@ -628,6 +733,111 @@ ENDING:
 - On the final beat, cut or settle to the yellow #FDB913 Tiwaz mark on a near-black background, centered, held for about one second. No tagline text unless it fits in heavy geometric uppercase yellow; if shown, only the word "TUESDAY."
 
 Show me the video so I can watch it before I post anything.</code></pre>
+    </div>
+  </section>
+
+  <section id="en-point-power" style="border-bottom:none;">
+    <div class="eyebrow">Presentations · Point ← POWER</div>
+    <h2 class="title">Presentations · Point ← POWER</h2>
+    <p class="note">Three kits for practicing deck-building with the Point ← POWER pair. Each kit is a deliberately messy pile of materials, some signal and some noise, just like a real folder nobody ever tidied. You attach all the files, let Point filter and interview you, and then POWER builds the output. The first two are demos the instructor runs up front; the third is a practice you run yourself. (Want the kits in Hebrew? Use the language toggle above.)</p>
+
+    <div class="dl-grid" style="grid-template-columns:1fr 1fr 1fr;">
+      <div class="dlcard">
+        <span class="lede">DEMO · Investor pitch</span>
+        <h3>The investor kit</h3>
+        <p>TUESDAY's materials for a Seed round: market, product, traction, competitors, the ask, and a few files that landed in the folder by mistake. The instructor demos how Point distills a real deck structure from the pile.</p>
+        <span class="file">dist/tuesday-pitch-pack-en.zip</span>
+        <a class="btn-dl" href="dist/tuesday-pitch-pack-en.zip" download>Download the investor kit</a>
+      </div>
+      <div class="dlcard">
+        <span class="lede">DEMO · Onboarding</span>
+        <h3>The onboarding kit</h3>
+        <p>The intake pile for a new TUESDAY hire: welcome notes, values, a checklist, team intros, and some office noise. The instructor demos it, and this is where you meet HTML for the first time: POWER turns the structure into an animated page.</p>
+        <span class="file">dist/tuesday-onboarding-pack-en.zip</span>
+        <a class="btn-dl" href="dist/tuesday-onboarding-pack-en.zip" download>Download the onboarding kit</a>
+      </div>
+      <div class="dlcard">
+        <span class="lede">PRACTICE · BI market analysis</span>
+        <h3>The market-analysis kit</h3>
+        <p>The BI team's working pile, settling one decision: keep developing "Tasks 2.0" or stop. The data is inconclusive on purpose. This one you run yourself, filtering the pile and building a deck that rests on the data alone.</p>
+        <span class="file">dist/tuesday-bi-practice-en.zip</span>
+        <a class="btn-dl" href="dist/tuesday-bi-practice-en.zip" download>Download the market-analysis kit</a>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--tue-display);text-transform:uppercase;font-size:1.05rem;margin:var(--tue-s5) 0 var(--tue-s3)">Investor pitch · the Point prompt</h3>
+    <p class="note">Attach all the files from the kit, paste this prompt into Point, and it interviews you and then produces a structure document. You pass the handoff to POWER, where the target is PowerPoint through Claude-in-PowerPoint.</p>
+    <div class="prompt">
+      <div class="prompt__head"><span class="prompt__cmd">Point · investor pitch</span><button type="button" class="copy" data-copy="pe-pitch">Copy</button></div>
+      <pre id="pe-pitch"><code>The goal: an investor pitch deck for TUESDAY, an early Seed round.
+
+TUESDAY is work-management software for the one-person company, the anti-Monday. The audience for this deck is investors, a seed round. I want a deck that tells a convincing story and leans on the numbers and the competitors, not a feature list.
+
+I've attached a folder of materials. Note that it's messy on purpose. It has highly relevant documents in it, and it also has a few files that have nothing to do with an investor deck. Your first job is to go through the pile, identify what's signal and what's noise, and ignore the noise.
+
+First, interview me. Ask me whatever you're missing to build a strong deck outline: what's the central story I want to convey, who exactly is sitting across from me in the room, the one thing I want them to remember, the risk I'm most afraid they'll ask about, and any number that needs verifying. Don't start building before you've answered these for yourself through me.
+
+After the interview, produce a handoff document of the deck structure in Markdown: a list of slides in order, and for each slide the title, the key point, and what's on it (text, a number, a quote, or a chart). Mark which source in the pile each point leans on. Don't produce the designed deck itself, only the structure. POWER will build from it afterward.
+
+Keep TUESDAY's voice: dry, direct, talking to the investor like a human being, no buzzwords and no exclamation marks. Full sentences, no mixing of languages inside a sentence.</code></pre>
+    </div>
+
+    <h3 style="font-family:var(--tue-display);text-transform:uppercase;font-size:1.05rem;margin:var(--tue-s5) 0 var(--tue-s3)">Onboarding · two stages</h3>
+    <p class="note">Stage one in Point builds the structure from the pile. Stage two in POWER turns it into an animated HTML page, and this is the moment you meet HTML for the first time.</p>
+    <div class="prompt">
+      <div class="prompt__head"><span class="prompt__cmd">Point · onboarding (stage 1)</span><button type="button" class="copy" data-copy="pe-onb-point">Copy</button></div>
+      <pre id="pe-onb-point"><code>The goal: a fun onboarding deck for a new employee at TUESDAY.
+
+I've attached a whole folder of material I gathered about the company. It's a mess. There are intake notes, a values doc, a checklist, a tools list, team introductions, terms, and a brand reminder. There are also a few things that have nothing to do with onboarding, they just landed in the same folder. I'm trusting you to figure out what's relevant and what isn't.
+
+Before you start building, interview me. Ask me a few short questions to understand what matters most to me for what the new employee should feel and know on day one, what the tone is, and how many slides I want. Don't produce anything before I've answered.
+
+Once you understand, give me a single handoff document, in MD format, describing the deck structure slide by slide. For each slide: a title, short content, and a note if a specific visual is needed. Don't write any HTML yet and don't style anything, just the structure and the content.
+
+Hold the brand voice from the brand reminder I attached. Dry, direct, like a peer. No exclamation marks, no buzzwords, no corporate gloss. Yellow, black, and white only.</code></pre>
+    </div>
+    <div class="prompt">
+      <div class="prompt__head"><span class="prompt__cmd">POWER · onboarding (stage 2)</span><button type="button" class="copy" data-copy="pe-onb-power">Copy</button></div>
+      <pre id="pe-onb-power"><code>Take the deck-structure document we built and turn it into one self-contained, fun, animated HTML page for onboarding a new employee at TUESDAY.
+
+Make it celebratory and make it feel like a real welcome. Confetti on entry, a bit of motion, soft transitions between sections as you scroll, elements that appear gently. Not too noisy, but it should feel alive.
+
+Stick to the brand. Yellow #FDB913, black #0B0B0B, white. No third color. Heavy, geometric typography, large letters. The symbol is the Tiwaz rune in yellow, as a small accent.
+
+One file, everything embedded inside, opens in any browser with no dependency on anything external.</code></pre>
+    </div>
+
+    <h3 style="font-family:var(--tue-display);text-transform:uppercase;font-size:1.05rem;margin:var(--tue-s5) 0 var(--tue-s3)">BI market analysis · two stages</h3>
+    <p class="note">Stage one in Point filters the pile, interviews you, and builds a balanced structure. Stage two in POWER produces the deck. Pick one target and one style.</p>
+    <div class="prompt">
+      <div class="prompt__head"><span class="prompt__cmd">Point · market analysis (stage 1)</span><button type="button" class="copy" data-copy="pe-bi-point">Copy</button></div>
+      <pre id="pe-bi-point"><code>You are the BI department of TUESDAY, a work-management software company for the freelancer and the one-person company.
+
+The goal: build a BI market-analysis presentation that settles one decision — is it worth continuing to develop the product, and specifically to keep investing in the feature "Tasks 2.0," or to stop.
+
+I have attached a real, messy working folder. It contains documents of different kinds. Some are relevant to the decision and some are noise unrelated to it. Your first task is to filter: go through everything, decide what is relevant and what to discard, and tell me briefly what you included and what you left out and why.
+
+After you have filtered, do not jump straight to the presentation. Interview me first. Ask me focused questions that will help sharpen the presentation: who the audience is, how many slides, which position the presentation should lead to if the data justifies it, and what level of detail. One question at a time.
+
+The data is not clear-cut. Some of the signals support continuing development and some support stopping. Do not put a gloss on it and do not decide in advance. The presentation should present a real, balanced argument and lead to a conclusion that rests on the data alone.
+
+At the end, produce one Markdown document with the presentation structure: a title for each slide, the content points of each slide, and which number or document from the folder supports each slide. This is the handoff document I will pass to the production stage. Do not design a presentation at this stage — only the structure.
+
+Write everything in clear, analytical English. No emojis. Full sentences.</code></pre>
+    </div>
+    <div class="prompt">
+      <div class="prompt__head"><span class="prompt__cmd">POWER · market analysis (stage 2)</span><button type="button" class="copy" data-copy="pe-bi-power">Copy</button></div>
+      <pre id="pe-bi-power"><code>Take the presentation structure in Markdown that you created in the previous stage and produce a full presentation from it.
+
+Target: [pick one — PowerPoint, or Google Slides].
+
+Design style: [pick one of the three — minimal and clean / data and charts at the center / executives and a sharp message].
+
+TUESDAY brand: yellow #FDB913, black #0B0B0B, white for text on a black background. No third color. Heavy, geometric typography, large letters. The mark is a Tiwaz rune in yellow, a small accent and not stamped on everything.
+
+Make sure every slide rests on the number or document specified for it in the structure. Do not invent new numbers — use only what was in the folder. At the end, the final slide presents the decision and its reasoning.
+
+English. No emojis. Full sentences in an analytical, formal register, not second person.</code></pre>
     </div>
   </section>
 

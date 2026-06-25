@@ -1,0 +1,78 @@
+{
+  "kit": "bi-market-analysis",
+  "brand": "TUESDAY",
+  "unit": "3.4 — presentations practice",
+  "decision": "Is it worth continuing to develop the product, and specifically to keep investing in \"Tasks 2.0\", or to stop",
+  "files": [
+    {
+      "name": "decision-brief.md",
+      "flag": "signal",
+      "description": "Brief from the VP that frames the decision question without answering it"
+    },
+    {
+      "name": "usage-analytics.csv",
+      "flag": "signal",
+      "description": "Monthly usage table: DAU/MAU, \"Tasks 2.0\" adoption, and weekly use that peaks and then declines"
+    },
+    {
+      "name": "churn-cohort.md",
+      "flag": "signal",
+      "description": "Messy churn data by cohort; churn climbs, and the people who tried the feature and were disappointed churn the most"
+    },
+    {
+      "name": "customer-survey.md",
+      "flag": "signal",
+      "description": "Survey results: NPS declining, \"Tasks 2.0\" as the number one complaint, and demand for simplicity and the customer portal"
+    },
+    {
+      "name": "competitor-moves.md",
+      "flag": "signal",
+      "description": "Moves by Monday and Notion and cheap tools entering the freelancer's territory"
+    },
+    {
+      "name": "market-trend-note.md",
+      "flag": "signal",
+      "description": "Trend note: the freelancer market is growing, but the direction is simplicity and real time savings, not more complexity"
+    },
+    {
+      "name": "revenue-pricing-snapshot.md",
+      "flag": "signal",
+      "description": "Revenue and cost picture: MRR growth almost flat, and \"Tasks 2.0\" is a cost center with no direct revenue"
+    },
+    {
+      "name": "tasks2-original-pitch.md",
+      "flag": "signal",
+      "description": "The original marketing announcement of \"Tasks 2.0\", for reference against the gap between the promise and reality"
+    },
+    {
+      "name": "office-lease-memo.md",
+      "flag": "noise",
+      "description": "Memo about the office lease renewal, unrelated to the product decision"
+    },
+    {
+      "name": "vendor-invoice-coffee.md",
+      "flag": "noise",
+      "description": "Vendor invoice for office coffee supply, pure noise"
+    },
+    {
+      "name": "recruiting-email.md",
+      "flag": "noise",
+      "description": "Recruiting email about a developer interview round, not relevant to the decision"
+    },
+    {
+      "name": "_prompts.md",
+      "flag": "meta",
+      "description": "The ready prompts the learner copies: the Point stage and the POWER stage"
+    },
+    {
+      "name": "manifest.json",
+      "flag": "meta",
+      "description": "This manifest: a list of all the files in the kit with a description and a signal/noise flag"
+    },
+    {
+      "name": "README.md",
+      "flag": "meta",
+      "description": "Map for Ben only: what is signal, what is noise, and what a good Point output should extract"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "kit": "bi-market-analysis",
+  "brand": "TUESDAY",
+  "unit": "3.4 — presentations practice",
+  "decision": "האם משתלם להמשיך לפתח את המוצר, ובפרט להמשיך להשקיע ב\"משימות 2.0\", או לעצור",
+  "files": [
+    {
+      "name": "decision-brief.md",
+      "flag": "signal",
+      "description": "תדריך מהסמנכ\"ל שממסגר את שאלת ההחלטה בלי לענות עליה"
+    },
+    {
+      "name": "usage-analytics.csv",
+      "flag": "signal",
+      "description": "טבלת שימוש חודשית: DAU/MAU, אימוץ \"משימות 2.0\", ושימוש שבועי שמגיע לשיא ואז יורד"
+    },
+    {
+      "name": "churn-cohort.md",
+      "flag": "signal",
+      "description": "נתוני נטישה מבולגנים לפי קוהורט; הנטישה מטפסת, ומי שניסה את הפיצ'ר והתאכזב נוטש הכי הרבה"
+    },
+    {
+      "name": "customer-survey.md",
+      "flag": "signal",
+      "description": "תוצאות סקר: NPS שיורד, \"משימות 2.0\" כתלונה מספר אחת, והביקוש הוא לפשטות ולפורטל לקוחות"
+    },
+    {
+      "name": "competitor-moves.md",
+      "flag": "signal",
+      "description": "מהלכי Monday ו-Notion וכלים זולים שנכנסים לטריטוריה של העצמאי"
+    },
+    {
+      "name": "market-trend-note.md",
+      "flag": "signal",
+      "description": "הערת מגמה: שוק הפרילנסרים גדל, אבל הכיוון הוא פשטות וחיסכון אמיתי בזמן, לא עוד מורכבות"
+    },
+    {
+      "name": "revenue-pricing-snapshot.md",
+      "flag": "signal",
+      "description": "תמונת הכנסות ועלויות: צמיחת MRR כמעט שטוחה, ו\"משימות 2.0\" הוא מרכז עלות בלי הכנסה ישירה"
+    },
+    {
+      "name": "tasks2-original-pitch.md",
+      "flag": "signal",
+      "description": "מסמך ההכרזה השיווקי המקורי של \"משימות 2.0\", לעיון מול הפער בין ההבטחה למציאות"
+    },
+    {
+      "name": "office-lease-memo.md",
+      "flag": "noise",
+      "description": "תזכיר על חידוש חוזה השכירות של המשרד, לא קשור להחלטת המוצר"
+    },
+    {
+      "name": "vendor-invoice-coffee.md",
+      "flag": "noise",
+      "description": "חשבונית ספק של אספקת קפה למשרד, רעש מוחלט"
+    },
+    {
+      "name": "recruiting-email.md",
+      "flag": "noise",
+      "description": "מייל גיוס על סבב ראיונות למפתח, לא רלוונטי להחלטה"
+    },
+    {
+      "name": "_prompts.md",
+      "flag": "meta",
+      "description": "הפרומפטים המוכנים שהלומד מעתיק: שלב Point ושלב POWER"
+    },
+    {
+      "name": "manifest.json",
+      "flag": "meta",
+      "description": "המניפסט הזה: רשימת כל הקבצים בערכה עם תיאור ודגל signal/noise"
+    },
+    {
+      "name": "README.md",
+      "flag": "meta",
+      "description": "מפה לבן בלבד: מה signal, מה noise, ומה פלט Point טוב אמור לחלץ"
+    }
+  ]
+}

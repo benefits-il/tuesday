@@ -16,6 +16,12 @@
 # English view). The backup/brand-voice.md is a fallback for learners stuck in
 # station 1; the real exercise is to generate their own.
 #
+#   3.4 presentations kits (data/tuesday-class/<set>/<lang>/), six more zips:
+#     dist/tuesday-pitch-pack-{he,en}.zip       investor-pitch kit (DEMO)
+#     dist/tuesday-onboarding-pack-{he,en}.zip  onboarding kit (DEMO)
+#     dist/tuesday-bi-practice-{he,en}.zip      BI market-analysis kit (PRACTICE)
+#   Each kit's _prompts.md is NOT shipped — it lives as copy blocks on index.html.
+#
 # Usage:
 #   pwsh ./scripts/package.ps1
 
@@ -73,4 +79,31 @@ foreach ($l in $langs) {
   # Station 2 — brand sheet, visual brief, the five briefs, plus the backup voice file
   $station2 = $station2Names | ForEach-Object { Join-Path $l.data $_ }
   New-Zip -ZipName ("tuesday-station2-brand-pack-" + $l.suffix) -Files $station2 -BaseDir $l.data
+}
+
+# -------------------------------------------------------------------------
+# 3.4 presentations class materials — three teaching kits, bilingual = 6 zips.
+# Each kit's files live under data/tuesday-class/<set>/<lang>/ (README + the
+# signal+noise docs + csv/json), each language packed in one root folder named
+# after the zip. The _prompts.md is deliberately NOT here (it ships as copy
+# blocks on index.html, never inside a zip).
+#
+#   dist/tuesday-pitch-pack-{he,en}.zip       investor-pitch kit (DEMO)
+#   dist/tuesday-onboarding-pack-{he,en}.zip  onboarding kit (DEMO)
+#   dist/tuesday-bi-practice-{he,en}.zip      BI market-analysis kit (PRACTICE)
+# -------------------------------------------------------------------------
+$classRoot = Join-Path $root "data\tuesday-class"
+$classSets = @(
+  @{ set = "pitch";      base = "tuesday-pitch-pack" },
+  @{ set = "onboarding"; base = "tuesday-onboarding-pack" },
+  @{ set = "bi";         base = "tuesday-bi-practice" }
+)
+$classLangs = @("he", "en")
+
+foreach ($cs in $classSets) {
+  foreach ($lang in $classLangs) {
+    $langDir = Join-Path $classRoot ($cs.set + "\" + $lang)
+    $files   = Get-ChildItem -Path $langDir -Recurse -File -Force | ForEach-Object { $_.FullName }
+    New-Zip -ZipName ($cs.base + "-" + $lang) -Files $files -BaseDir $langDir
+  }
 }
