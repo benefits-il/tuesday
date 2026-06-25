@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tuesday — Studio</title>
+<meta name="description" content="Tuesday Studio — one plugin, five jobs, one look. A Cowork plugin that turns raw drafts into finished, on-brand work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Silkscreen:wght@400;700&family=Space+Grotesk:wght@400;500;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_ds/tokens.css">
+<link rel="stylesheet" href="_ds/patterns.css">
+<link rel="icon" href="_ds/mark.svg">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--tue-black); color: var(--tue-white); font-family: var(--tue-body); -webkit-font-smoothing: antialiased; }
+  [dir="rtl"] body, [dir="rtl"] .wrap { font-family: "Rubik", var(--tue-body); }
+  a { color: inherit; }
+  [hidden] { display: none !important; }
+  .wrap { max-width: var(--tue-maxw); margin: 0 auto; padding: 0 var(--tue-s4); }
+
+  /* Header (shared, language-neutral) */
+  header { position: sticky; top: 0; z-index: 10; background: rgba(11,11,11,0.92); backdrop-filter: blur(6px); border-bottom: 1px solid var(--tue-line-dark); }
+  .bar { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .brand img { height: 30px; width: auto; display: block; }
+  .brand .wm { font-family: var(--tue-display); text-transform: uppercase; color: var(--tue-yellow); font-size: 1.3rem; letter-spacing: var(--tue-tracking-tight); }
+  .brand .wm .wm-t { color: var(--tue-white); }
+
+  /* Language toggle (Tuesday colors) */
+  .lang-toggle { display: inline-flex; gap: 4px; padding: 4px; background: var(--tue-ink); border: 2px solid var(--tue-line-dark); border-radius: var(--tue-radius-pill); }
+  .lang-btn { font-family: var(--tue-pixel); font-size: 11px; letter-spacing: 0.04em; cursor: pointer; padding: 7px 14px; border: 0; border-radius: var(--tue-radius-pill); background: transparent; color: #CFCFCB; transition: background .12s ease, color .12s ease; }
+  .lang-btn:hover { color: var(--tue-yellow); }
+  .lang-btn.is-active { background: var(--tue-yellow); color: var(--tue-black); }
+
+  section { padding: var(--tue-s7) 0; border-bottom: 1px solid var(--tue-line-dark); }
+  .eyebrow { font-family: var(--tue-pixel); font-size: var(--tue-fs-pixel); letter-spacing: var(--tue-tracking-wide); color: var(--tue-mute); text-transform: uppercase; margin-bottom: var(--tue-s3); }
+  h2.title { font-family: var(--tue-display); text-transform: uppercase; font-size: var(--tue-fs-h2); letter-spacing: var(--tue-tracking-tight); margin: 0 0 var(--tue-s4); }
+  [dir="rtl"] h2.title, [dir="rtl"] .hero h1, [dir="rtl"] .brand .wm { letter-spacing: normal; }
+
+  /* Hero */
+  .hero { padding-top: var(--tue-s6); border-top: 4px solid var(--tue-yellow); }
+  .hero h1 { font-family: var(--tue-display); text-transform: uppercase; font-size: var(--tue-fs-hero); line-height: var(--tue-leading-tight); letter-spacing: var(--tue-tracking-tight); margin: var(--tue-s3) 0; }
+  .hero h1 .y { color: var(--tue-yellow); }
+  .hero p { font-size: 1.2rem; max-width: 52ch; color: #DDDDD9; line-height: var(--tue-leading-body); }
+  .hero .cta { margin-top: var(--tue-s4); display: flex; gap: var(--tue-s3); flex-wrap: wrap; }
+
+  /* Kit chips */
+  .kit { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--tue-s3); margin-top: var(--tue-s5); }
+  .chip { border: 2px solid var(--tue-line-dark); padding: var(--tue-s3); display: flex; flex-direction: column; gap: 8px; }
+  .chip .name { font-family: var(--tue-display); text-transform: uppercase; font-size: 1rem; letter-spacing: var(--tue-tracking-tight); }
+  .chip .state { font-family: var(--tue-pixel); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; align-self: flex-start; padding: 4px 8px; }
+  .chip.live { border-color: var(--tue-yellow); }
+  .chip.live .state { background: var(--tue-yellow); color: var(--tue-black); }
+  .chip.soon { opacity: 0.6; }
+  .chip.soon .state { border: 1px solid var(--tue-mute); color: var(--tue-mute); }
+  .chip p { margin: 0; font-size: 0.92rem; color: #C9C9C5; line-height: 1.5; }
+  .chip .cmd { font-family: var(--tue-pixel); font-size: 11px; color: var(--tue-yellow); direction: ltr; unicode-bidi: isolate; display: inline-block; margin-top: 2px; }
+
+  /* Components grid (the four parts) */
+  .four { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: var(--tue-s3); }
+  .part { background: var(--tue-ink); border-inline-start: 4px solid var(--tue-yellow); padding: var(--tue-s4); }
+  .part .tag { font-family: var(--tue-pixel); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--tue-yellow); }
+  .part h3 { font-family: var(--tue-display); text-transform: uppercase; font-size: 1.05rem; margin: 10px 0 8px; letter-spacing: var(--tue-tracking-tight); }
+  .part code, .part .mono { font-family: var(--tue-pixel); font-size: 12px; color: var(--tue-yellow); direction: ltr; unicode-bidi: isolate; display: inline-block; }
+  .part p { margin: 6px 0 0; font-size: 0.92rem; color: #D4D4D0; line-height: 1.5; }
+  .wraps { margin-top: var(--tue-s4); font-size: 1.05rem; color: #DDDDD9; }
+  .wraps b { color: var(--tue-yellow); }
+
+  /* Install */
+  .ways { display: grid; grid-template-columns: 1fr 1fr; gap: var(--tue-s4); }
+  @media (max-width: 720px) { .ways { grid-template-columns: 1fr; } }
+  .way { background: var(--tue-ink); border: var(--tue-border-light); padding: var(--tue-s4); }
+  .way h3 { font-family: var(--tue-display); text-transform: uppercase; font-size: 1.1rem; margin: 0 0 4px; letter-spacing: var(--tue-tracking-tight); }
+  .way .lede { font-family: var(--tue-pixel); font-size: 11px; letter-spacing: 0.05em; color: var(--tue-mute); text-transform: uppercase; margin-bottom: var(--tue-s3); }
+  .steps { margin: 0; padding: 0; list-style: none; counter-reset: s; }
+  .steps li { counter-increment: s; position: relative; padding-block: 10px; padding-inline-start: 40px; border-top: 1px solid var(--tue-line-dark); font-size: 0.96rem; line-height: 1.5; }
+  .steps li::before { content: counter(s); position: absolute; inset-inline-start: 0; top: 8px; width: 26px; height: 26px; background: var(--tue-yellow); color: var(--tue-black); font-family: var(--tue-display); font-size: 13px; display: grid; place-items: center; }
+  .steps code, .mono { font-family: var(--tue-pixel); font-size: 12px; background: var(--tue-black); color: var(--tue-yellow); padding: 2px 6px; direction: ltr; unicode-bidi: isolate; display: inline-block; }
+
+  /* Jobs table (the five capabilities → command + brief) */
+  .jobs { width: 100%; border-collapse: collapse; margin-top: var(--tue-s3); }
+  .jobs th, .jobs td { text-align: start; padding: 10px 12px; border-top: 1px solid var(--tue-line-dark); font-size: 0.92rem; vertical-align: top; }
+  .jobs th { font-family: var(--tue-pixel); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--tue-mute); }
+  .jobs .mono { background: var(--tue-black); }
+
+  /* Code blocks (commands, play prompts — always LTR) */
+  pre { background: #050505; border: 1px solid var(--tue-line-dark); border-inline-start: 4px solid var(--tue-yellow); padding: var(--tue-s3); overflow-x: auto; margin: 0 0 var(--tue-s3); direction: ltr; }
+  pre code { font-family: var(--tue-pixel); font-size: 13px; color: #EDEDE8; line-height: 1.7; }
+  .note { color: #B7B7B2; font-size: 0.9rem; line-height: 1.6; max-width: 64ch; }
+  .note .mono { color: var(--tue-yellow); background: var(--tue-ink); }
+
+  /* Download */
+  .dl { display: flex; align-items: center; justify-content: space-between; gap: var(--tue-s4); background: var(--tue-yellow); color: var(--tue-black); padding: var(--tue-s4) var(--tue-s5); flex-wrap: wrap; }
+  .dl .meta b { font-family: var(--tue-display); text-transform: uppercase; font-size: 1.4rem; display: block; letter-spacing: var(--tue-tracking-tight); direction: ltr; }
+  .dl .meta span { font-family: var(--tue-pixel); font-size: 12px; }
+  .dl .btn-dark { font-family: var(--tue-display); text-transform: uppercase; background: var(--tue-black); color: var(--tue-yellow); border: 3px solid var(--tue-black); padding: 14px 26px; text-decoration: none; box-shadow: 6px 6px 0 rgba(0,0,0,0.35); display: inline-flex; gap: 10px; align-items: center; }
+  .dl .btn-dark:hover { transform: translate(-2px,-2px); }
+
+  footer { padding: var(--tue-s5) 0; }
+  .foot { font-family: var(--tue-pixel); font-size: 11px; letter-spacing: 0.05em; color: var(--tue-mute); line-height: 1.9; }
+  [dir="rtl"] .foot { font-family: "Rubik", var(--tue-pixel); font-size: 12px; letter-spacing: normal; }
+  .foot .y { color: var(--tue-yellow); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top"><img src="_ds/mark.svg" alt="Tuesday"><span class="wm"><span class="wm-t">T</span>uesday</span></a>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" class="lang-btn" data-lang="he" aria-pressed="true">עברית</button>
+      <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">English</button>
+    </div>
+  </div>
+</header>
+
+<a id="top"></a>
+
+<!-- ===================== HEBREW (default) ===================== -->
+<main id="lang-he" dir="rtl">
+<div class="wrap">
+
+  <section class="hero">
+    <div class="eyebrow">Tuesday · plugin אחד ל-Cowork</div>
+    <h1>plugin אחד.<br>חמש מלאכות.<br><span class="y">מראה אחד.</span></h1>
+    <p>‏<span class="mono">tuesday-studio</span> הוא plugin אחד שעושה חמש מלאכות, במראה השחור-צהוב של Tuesday, בתוך Cowork. נותנים לו ערכת-מותג, והוא הופך טיוטות גולמיות לעבודה גמורה.</p>
+    <div class="cta">
+      <a class="tue-btn" href="#he-install">איך מתקינים</a>
+      <a class="tue-btn tue-btn--ghost" href="#he-inside">מה יש בפנים</a>
+    </div>
+
+    <div class="kit">
+      <div class="chip live"><span class="state">מלאכה</span><span class="name">מייל פנייה</span><p>מייל קר על-המותג, מוכן כטיוטה ב-Gmail.</p><span class="cmd">/outreach</span></div>
+      <div class="chip live"><span class="state">מלאכה</span><span class="name">מייל ברוכים-הבאים</span><p>מייל welcome ממותג, טיוטה ב-Gmail.</p><span class="cmd">/welcome</span></div>
+      <div class="chip live"><span class="state">מלאכה</span><span class="name">פוסט ורילס</span><p>תמונה plus כיתוב לאינסטגרם.</p><span class="cmd">/post</span></div>
+      <div class="chip live"><span class="state">מלאכה</span><span class="name">קרוסלה ממותגת</span><p>כמה שקופיות, אותו מראה בדיוק.</p><span class="cmd">/carousel</span></div>
+      <div class="chip live"><span class="state">מלאכה</span><span class="name">סרטון דמות</span><p>רילס קצר עם דמות-AI.</p><span class="cmd">/reel</span></div>
+    </div>
+  </section>
+
+  <section id="he-inside">
+    <div class="eyebrow">tuesday-studio</div>
+    <h2 class="title">מה יש בתוך ה-plugin</h2>
+    <div class="four">
+      <div class="part"><span class="tag">סקילים</span><h3>חמישה — אחד לכל מלאכה</h3><p>השיטה. כל סקיל קורא את דף-המותג שאתם נותנים — צבעים, טיפוגרפיה, לוגו, קול — ומחיל אותו. גנרי: החלפת ערכת-המותג מפעילה אותו על מותג אחר.</p></div>
+      <div class="part"><span class="tag">חיבורים</span><h3>שניים, בשתי דרכים</h3><p>‏<span class="mono">Higgsfield</span> לתמונה ווידאו, מחוּוט ב-<span class="mono">.mcp.json</span>. ‏<span class="mono">Gmail</span> לטיוטות, מדליקים פעם אחת ב-Connectors. הדלת אל מה שבחוץ.</p></div>
+      <div class="part"><span class="tag">פקודות</span><h3>חמש</h3><p>הכפתורים. <span class="mono">/outreach</span> <span class="mono">/welcome</span> <span class="mono">/post</span> <span class="mono">/carousel</span> <span class="mono">/reel</span> — כל פקודה מפעילה את הסוכן הנכון.</p></div>
+      <div class="part"><span class="tag">סוכנים</span><h3>שניים</h3><p>הדמויות. <span class="mono">content-writer</span> כותב את המיילים והכיתובים; <span class="mono">visual-producer</span> מפיק את התמונות, הקרוסלה והסרטון.</p></div>
+    </div>
+    <p class="wraps">ה-plugin הוא הקופסה. הוא <b>עוטף</b> את שלושת האחרים. זה כל הרעיון.</p>
+  </section>
+
+  <section id="he-install">
+    <div class="eyebrow">התקנה</div>
+    <h2 class="title">מתקינים ב-Cowork</h2>
+    <p class="note" style="margin-bottom:var(--tue-s3)">ב-Cowork, פותחים את <span class="mono">/plugin</span> ומריצים את שתי השורות:</p>
+    <pre><code>/plugin marketplace add benefits-il/tuesday
+/plugin install tuesday-studio@tuesday</code></pre>
+    <p class="note">שני החיבורים — מוסיפים כל אחד פעם אחת ברשימת ה-Connectors (ב-claude.ai: Settings ואז Connectors · ב-Cowork: Customize ואז Connectors). <span class="mono">Higgsfield</span> (תמונה ווידאו): בוחרים <b>Add custom connector</b>, קוראים לו Higgsfield, מדביקים את הכתובת <span class="mono">https://mcp.higgsfield.ai/mcp</span>, לוחצים Connect, ומתחברים עם חשבון Higgsfield — חינם, בלי כרטיס, בלי API key. ה-plugin כבר מפנה לכתובת הזו ב-<span class="mono">.mcp.json</span>; ההתחברות היא מה שמרשה לו לעבוד. <span class="mono">Gmail</span> (טיוטות): מדליקים את החיבור המובנה ומתחברים. המיילים נשמרים כטיוטה, אף פעם לא נשלחים.</p>
+  </section>
+
+  <section id="he-play">
+    <div class="eyebrow">איך מריצים</div>
+    <h2 class="title">משחקים עם זה</h2>
+    <ol class="steps">
+      <li>מורידים את ערכת-המותג למטה ופותחים את ה-zip.</li>
+      <li>מצרפים לשיחה ב-Cowork את <span class="mono">brand-voice.md</span> (הקול שיצרתם עם ה-plugin brand-voice) plus <span class="mono">brand-sheet.md</span> plus את הבריף של המלאכה שבחרתם.</li>
+      <li>מעתיקים את הפרומפט המוכן מתוך <span class="mono">prompts/</span> ומדביקים. הפקודה מפעילה את הסוכן, הסוכן את הסקיל, דרך החיבור.</li>
+    </ol>
+    <table class="jobs">
+      <thead><tr><th>פקודה</th><th>מה מקבלים</th><th>הבריף בערכה</th></tr></thead>
+      <tbody>
+        <tr><td><span class="mono">/outreach</span></td><td>מייל פנייה, טיוטה ב-Gmail</td><td><span class="mono">outreach-context.md</span></td></tr>
+        <tr><td><span class="mono">/welcome</span></td><td>מייל ברוכים-הבאים, טיוטה ב-Gmail</td><td><span class="mono">welcome-points.md</span></td></tr>
+        <tr><td><span class="mono">/post</span></td><td>תמונה plus כיתוב לפוסט</td><td><span class="mono">social-seed.md</span></td></tr>
+        <tr><td><span class="mono">/carousel</span></td><td>קרוסלה רב-שקופיות</td><td><span class="mono">carousel-outline.md</span></td></tr>
+        <tr><td><span class="mono">/reel</span></td><td>סרטון דמות-AI קצר</td><td><span class="mono">character-brief.md</span></td></tr>
+      </tbody>
+    </table>
+    <p class="note">ה-free של Higgsfield מוציא בינוני (מודל בסיסי plus watermark). המנוף לאיכות הוא פרומפט ויזואלי מדויק — בדיוק מה שהסוכן בונה לכם מדף-המותג. מי שרוצה נקי ו-HD: מנוי Higgsfield (בערך 15 דולר לחודש), אופציונלי.</p>
+  </section>
+
+  <section id="he-download" style="border-bottom:none;">
+    <div class="eyebrow">הדאטא</div>
+    <h2 class="title">ערכת-המותג של Tuesday</h2>
+    <div class="dl">
+      <div class="meta"><b>Tuesday brand pack</b><span>דף-מותג plus חומרי-גלם plus חמשת הפרומפטים המוכנים</span></div>
+      <a class="btn-dark" href="dist/tuesday-brand.zip" download>הורדת .zip</a>
+    </div>
+  </section>
+
+</div>
+<footer><div class="wrap foot"><span class="y">TUESDAY</span> — מותג-הדגמה שנבנה לשיעור Benefits, לא מוצר אמיתי.<br>Benefits · קורס AI · יחידה 3.2 — מה זה plugin.</div></footer>
+</main>
+
+<!-- ===================== ENGLISH ===================== -->
+<main id="lang-en" dir="ltr" hidden>
+<div class="wrap">
+
+  <section class="hero">
+    <div class="eyebrow">Tuesday · One plugin for Cowork</div>
+    <h1>One plugin.<br>Five jobs.<br><span class="y">One look.</span></h1>
+    <p><span class="mono">tuesday-studio</span> is one plugin that does five jobs, in Tuesday's black-and-yellow look, inside Cowork. Hand it a brand pack and it turns raw drafts into finished work.</p>
+    <div class="cta">
+      <a class="tue-btn" href="#en-install">Install it</a>
+      <a class="tue-btn tue-btn--ghost" href="#en-inside">See what's inside</a>
+    </div>
+
+    <div class="kit">
+      <div class="chip live"><span class="state">Job</span><span class="name">Outreach email</span><p>An on-brand cold email, ready as a Gmail draft.</p><span class="cmd">/outreach</span></div>
+      <div class="chip live"><span class="state">Job</span><span class="name">Welcome email</span><p>A branded welcome email, drafted in Gmail.</p><span class="cmd">/welcome</span></div>
+      <div class="chip live"><span class="state">Job</span><span class="name">Post and reel</span><p>An Instagram image plus caption.</p><span class="cmd">/post</span></div>
+      <div class="chip live"><span class="state">Job</span><span class="name">Branded carousel</span><p>Several slides, the exact same look.</p><span class="cmd">/carousel</span></div>
+      <div class="chip live"><span class="state">Job</span><span class="name">Character video</span><p>A short AI-character reel.</p><span class="cmd">/reel</span></div>
+    </div>
+  </section>
+
+  <section id="en-inside">
+    <div class="eyebrow">tuesday-studio</div>
+    <h2 class="title">What's inside the plugin</h2>
+    <div class="four">
+      <div class="part"><span class="tag">Skills</span><h3>Five — one per job</h3><p>The method. Each skill reads the brand sheet you give it — colors, type, logo, voice — and applies it. Generic: swap the brand pack and it works for another brand.</p></div>
+      <div class="part"><span class="tag">Connectors</span><h3>Two, wired two ways</h3><p><span class="mono">Higgsfield</span> for image and video, wired in <span class="mono">.mcp.json</span>. <span class="mono">Gmail</span> for drafts, turned on once in Connectors. The door to the outside.</p></div>
+      <div class="part"><span class="tag">Commands</span><h3>Five</h3><p>The buttons. <span class="mono">/outreach</span> <span class="mono">/welcome</span> <span class="mono">/post</span> <span class="mono">/carousel</span> <span class="mono">/reel</span> — each one drives the right agent.</p></div>
+      <div class="part"><span class="tag">Sub-agents</span><h3>Two</h3><p>The personas. <span class="mono">content-writer</span> writes the emails and captions; <span class="mono">visual-producer</span> makes the images, the carousel, and the video.</p></div>
+    </div>
+    <p class="wraps">Plugin is the box. It <b>wraps</b> the other three. That is the whole idea.</p>
+  </section>
+
+  <section id="en-install">
+    <div class="eyebrow">Install</div>
+    <h2 class="title">Install it in Cowork</h2>
+    <p class="note" style="margin-bottom:var(--tue-s3)">In Cowork, open <span class="mono">/plugin</span> and run the two lines:</p>
+    <pre><code>/plugin marketplace add benefits-il/tuesday
+/plugin install tuesday-studio@tuesday</code></pre>
+    <p class="note">Add each connector once in your Connectors list (claude.ai: Settings then Connectors · Cowork: Customize then Connectors). <span class="mono">Higgsfield</span> (image and video): choose <b>Add custom connector</b>, name it Higgsfield, paste the URL <span class="mono">https://mcp.higgsfield.ai/mcp</span>, click Connect, and sign in with your Higgsfield account — free, no card, no API key. The plugin already points to this URL in <span class="mono">.mcp.json</span>; this sign-in is what authorizes it. <span class="mono">Gmail</span> (drafts): turn on the built-in connector and sign in. Emails are saved as drafts, never sent.</p>
+  </section>
+
+  <section id="en-play">
+    <div class="eyebrow">How to run it</div>
+    <h2 class="title">Play with it</h2>
+    <ol class="steps">
+      <li>Download the brand pack below and unzip it.</li>
+      <li>Attach <span class="mono">brand-voice.md</span> (the voice you made with the brand-voice plugin), <span class="mono">brand-sheet.md</span>, and the brief for the job you picked.</li>
+      <li>Copy the ready prompt from <span class="mono">prompts/</span> and paste it. The command drives the agent, the agent the skill, through the connector.</li>
+    </ol>
+    <table class="jobs">
+      <thead><tr><th>Command</th><th>What you get</th><th>Brief in the pack</th></tr></thead>
+      <tbody>
+        <tr><td><span class="mono">/outreach</span></td><td>Outreach email, drafted in Gmail</td><td><span class="mono">outreach-context.md</span></td></tr>
+        <tr><td><span class="mono">/welcome</span></td><td>Welcome email, drafted in Gmail</td><td><span class="mono">welcome-points.md</span></td></tr>
+        <tr><td><span class="mono">/post</span></td><td>Post image plus caption</td><td><span class="mono">social-seed.md</span></td></tr>
+        <tr><td><span class="mono">/carousel</span></td><td>Multi-slide carousel</td><td><span class="mono">carousel-outline.md</span></td></tr>
+        <tr><td><span class="mono">/reel</span></td><td>Short AI-character video</td><td><span class="mono">character-brief.md</span></td></tr>
+      </tbody>
+    </table>
+    <p class="note">Higgsfield's free tier is mediocre by default (basic model plus a watermark). The lever for quality is a precise visual prompt — exactly what the agent builds for you from the brand sheet. Want clean, HD, no watermark? A Higgsfield subscription (about $15/month) is optional.</p>
+  </section>
+
+  <section id="en-download" style="border-bottom:none;">
+    <div class="eyebrow">The data</div>
+    <h2 class="title">Tuesday brand pack</h2>
+    <div class="dl">
+      <div class="meta"><b>Tuesday brand pack</b><span>brand sheet plus raw materials plus the five ready prompts</span></div>
+      <a class="btn-dark" href="dist/tuesday-brand.zip" download>Download .zip</a>
+    </div>
+  </section>
+
+</div>
+<footer><div class="wrap foot"><span class="y">TUESDAY</span> — a teaching brand built for a Benefits lesson, not a real product.<br>Benefits · AI course · Unit 3.2 — what a plugin is.</div></footer>
+</main>
+
+<script>
+  (function(){
+    var he = document.getElementById('lang-he');
+    var en = document.getElementById('lang-en');
+    var btns = document.querySelectorAll('.lang-btn');
+    function setLang(lang){
+      var isHe = lang === 'he';
+      he.hidden = !isHe; en.hidden = isHe;
+      document.documentElement.lang = lang;
+      document.documentElement.dir = isHe ? 'rtl' : 'ltr';
+      btns.forEach(function(b){
+        var on = b.dataset.lang === lang;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      try { localStorage.setItem('benefits-lang', lang); } catch(e){}
+    }
+    btns.forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); }); });
+    var saved = 'he';
+    try {
+      var qp = new URLSearchParams(location.search).get('lang');
+      saved = (qp === 'en' || qp === 'he') ? qp : (localStorage.getItem('benefits-lang') || 'he');
+    } catch(e){}
+    setLang(saved);
+  })();
+</script>
+</body>
+</html>

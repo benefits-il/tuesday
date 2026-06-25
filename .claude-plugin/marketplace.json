@@ -1,0 +1,18 @@
+{
+  "name": "tuesday",
+  "owner": {
+    "name": "Tuesday"
+  },
+  "plugins": [
+    {
+      "name": "tuesday-studio",
+      "displayName": "Tuesday Studio",
+      "source": "./plugins/tuesday-studio",
+      "description": "One plugin, five jobs. Turn Tuesday's raw drafts and rough briefs into finished, on-brand work — outreach and welcome emails, Instagram posts and reels, a branded carousel, and an AI-character video. Reads whatever brand you give it.",
+      "author": {
+        "name": "Tuesday"
+      },
+      "category": "marketing"
+    }
+  ]
+}

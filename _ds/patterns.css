@@ -1,0 +1,94 @@
+/* Tuesday — Patterns
+   Component classes built on tokens.css. Import tokens.css first. */
+
+/* --- Type roles --- */
+.tue-display {
+  font-family: var(--tue-display);
+  text-transform: uppercase;
+  letter-spacing: var(--tue-tracking-tight);
+  line-height: var(--tue-leading-tight);
+  margin: 0;
+}
+.tue-body {
+  font-family: var(--tue-body);
+  font-size: var(--tue-fs-body);
+  line-height: var(--tue-leading-body);
+}
+
+/* --- Kicker: small pixel label on yellow --- */
+.tue-kicker {
+  font-family: var(--tue-pixel);
+  font-size: var(--tue-fs-pixel);
+  letter-spacing: var(--tue-tracking-wide);
+  text-transform: uppercase;
+  color: var(--tue-black);
+  background: var(--tue-yellow);
+  padding: 6px 10px;
+  display: inline-block;
+}
+.tue-kicker--ghost {
+  background: transparent;
+  color: var(--tue-yellow);
+  border: 2px solid var(--tue-yellow);
+}
+
+/* --- Badge: yellow circle with a black pixel letter (the GIVE-U-MORE motif) --- */
+.tue-badge {
+  width: 56px; height: 56px;
+  display: inline-grid; place-items: center;
+  background: var(--tue-yellow);
+  color: var(--tue-black);
+  border-radius: var(--tue-radius-pill);
+  border: 3px solid var(--tue-black);
+  font-family: var(--tue-pixel);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+.tue-badge--sm { width: 40px; height: 40px; font-size: 0.95rem; }
+.tue-badge--lg { width: 76px; height: 76px; font-size: 1.7rem; }
+/* On a dark ground the badge needs a light ring to detach */
+.tue-badge--on-dark { border-color: var(--tue-black); box-shadow: 0 0 0 3px var(--tue-ink); }
+
+/* --- Button: block, hard shadow, spring press --- */
+.tue-btn {
+  font-family: var(--tue-display);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 1rem;
+  color: var(--tue-black);
+  background: var(--tue-yellow);
+  border: var(--tue-border);
+  padding: 14px 26px;
+  display: inline-flex; align-items: center; gap: 10px;
+  cursor: pointer; text-decoration: none;
+  box-shadow: var(--tue-shadow-hard);
+  transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+.tue-btn:hover  { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 var(--tue-black); background: var(--tue-yellow-bright); }
+.tue-btn:active { transform: translate(3px, 3px);   box-shadow: 2px 2px 0 var(--tue-black); }
+.tue-btn--ghost {
+  background: transparent; color: var(--tue-yellow);
+  border-color: var(--tue-yellow); box-shadow: var(--tue-shadow-hard-yellow);
+}
+.tue-btn--ghost:hover { background: rgba(253, 185, 19, 0.12); }
+
+/* --- Card: hard border + offset shadow --- */
+.tue-card {
+  background: var(--tue-white); color: var(--tue-black);
+  border: var(--tue-border); box-shadow: var(--tue-shadow-hard);
+  padding: var(--tue-s4);
+}
+.tue-card--dark {
+  background: var(--tue-ink); color: var(--tue-white);
+  border-color: var(--tue-yellow); box-shadow: var(--tue-shadow-hard-yellow);
+}
+
+/* --- Mark: the Tiwaz glyph, sized by font-size of the parent --- */
+.tue-mark { width: 1em; height: 1em; display: inline-block; vertical-align: middle; }
+
+/* --- Rule: a thick yellow divider --- */
+.tue-rule { height: 4px; background: var(--tue-yellow); border: 0; margin: var(--tue-s4) 0; }
+
+/* --- Surfaces --- */
+.tue-surface-dark  { background: var(--tue-black); color: var(--tue-white); }
+.tue-surface-light { background: var(--tue-paper); color: var(--tue-black); }

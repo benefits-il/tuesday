@@ -1,0 +1,50 @@
+/* Tuesday — Design Tokens
+   Internal brand kit for the Tuesday plugin world (course unit 3.2, station 2).
+   Look: sharp black ground, one bright yellow, heavy geometric type.
+   Reference idiom: the GIVE U MORE wordmark — bold letterform + circle badges
+   carrying blocky/pixel letters. We adopt the language, not the words. */
+
+:root {
+  /* --- Color: black ground, a single bright yellow, white --- */
+  --tue-yellow:        #FDB913;   /* the brand */
+  --tue-yellow-bright: #FFC629;   /* hover / highlight */
+  --tue-yellow-deep:   #C98A00;   /* pressed / shadow tint */
+  --tue-black:         #0B0B0B;   /* near-black ground */
+  --tue-ink:           #161616;   /* raised black surface */
+  --tue-white:         #FFFFFF;
+  --tue-paper:         #F7F6F2;   /* warm off-white light section */
+  --tue-mute:          #8A8A85;   /* muted text on light */
+  --tue-line-dark:     rgba(255, 255, 255, 0.14);
+  --tue-line-light:    rgba(0, 0, 0, 0.16);
+
+  /* --- Type families (free, pinned via Google Fonts) --- */
+  --tue-display: "Archivo Black", system-ui, -apple-system, sans-serif;
+  --tue-pixel:   "Silkscreen", "Courier New", monospace;
+  --tue-body:    "Space Grotesk", system-ui, -apple-system, sans-serif;
+
+  /* --- Type scale: heavy, tight headers; readable body --- */
+  --tue-fs-hero:  clamp(3rem, 9vw, 7rem);
+  --tue-fs-h1:    clamp(2.2rem, 5.5vw, 4rem);
+  --tue-fs-h2:    clamp(1.6rem, 3.5vw, 2.4rem);
+  --tue-fs-h3:    1.3rem;
+  --tue-fs-body:  1.0625rem;      /* 17px */
+  --tue-fs-small: 0.875rem;
+  --tue-fs-pixel: 0.75rem;
+  --tue-tracking-tight: -0.02em;
+  --tue-tracking-wide:  0.08em;
+  --tue-leading-tight:  0.95;
+  --tue-leading-body:   1.55;
+
+  /* --- Space: 8px base --- */
+  --tue-s1: 8px;  --tue-s2: 16px; --tue-s3: 24px; --tue-s4: 32px;
+  --tue-s5: 48px; --tue-s6: 64px; --tue-s7: 96px; --tue-s8: 128px;
+
+  /* --- Geometry: brutalist hard edges + offset shadows --- */
+  --tue-radius:       0px;
+  --tue-radius-pill:  999px;
+  --tue-border:       3px solid var(--tue-black);
+  --tue-border-light: 3px solid var(--tue-yellow);
+  --tue-shadow-hard:        6px 6px 0 var(--tue-black);
+  --tue-shadow-hard-yellow: 6px 6px 0 var(--tue-yellow);
+  --tue-maxw: 1080px;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tuesday — Brand Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Silkscreen:wght@400;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="patterns.css">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--tue-black); color: var(--tue-white); font-family: var(--tue-body); }
+  .wrap { max-width: var(--tue-maxw); margin: 0 auto; padding: var(--tue-s5) var(--tue-s4); }
+  section { padding: var(--tue-s6) 0; border-bottom: 1px solid var(--tue-line-dark); }
+  .label { font-family: var(--tue-pixel); font-size: var(--tue-fs-pixel); letter-spacing: var(--tue-tracking-wide); color: var(--tue-mute); text-transform: uppercase; margin-bottom: var(--tue-s3); }
+
+  /* Hero */
+  .hero { display: flex; flex-direction: column; gap: var(--tue-s3); padding-top: var(--tue-s4); }
+  .lockup { display: flex; align-items: center; gap: var(--tue-s3); }
+  .lockup .mark { height: 104px; width: auto; }
+  .wordmark { font-family: var(--tue-display); text-transform: uppercase; font-size: var(--tue-fs-hero); line-height: var(--tue-leading-tight); letter-spacing: var(--tue-tracking-tight); color: var(--tue-yellow); }
+  .wordmark .wm-t { color: var(--tue-white); }
+  .hero-line { font-family: var(--tue-display); text-transform: uppercase; font-size: var(--tue-fs-h1); line-height: var(--tue-leading-tight); letter-spacing: var(--tue-tracking-tight); max-width: 16ch; }
+  .hero-line .y { color: var(--tue-yellow); }
+  .hero-sub { font-size: 1.125rem; max-width: 46ch; color: #D9D9D5; line-height: var(--tue-leading-body); }
+
+  /* Swatches */
+  .swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--tue-s3); }
+  .sw { border: 2px solid var(--tue-line-dark); }
+  .sw .chip { height: 96px; }
+  .sw .meta { padding: 10px 12px; font-family: var(--tue-pixel); font-size: 11px; letter-spacing: 0.04em; background: var(--tue-ink); }
+  .sw .meta b { display: block; color: var(--tue-yellow); font-weight: 400; }
+
+  /* Type specimen */
+  .spec > * { margin: 0 0 var(--tue-s2); }
+  .spec .s-hero { font-family: var(--tue-display); font-size: clamp(2.4rem,6vw,4rem); text-transform: uppercase; letter-spacing: var(--tue-tracking-tight); line-height: .95; }
+  .spec .s-h2 { font-family: var(--tue-display); font-size: var(--tue-fs-h2); text-transform: uppercase; }
+  .spec .s-pixel { font-family: var(--tue-pixel); font-size: 1rem; letter-spacing: 0.06em; color: var(--tue-yellow); }
+  .spec .s-body { font-family: var(--tue-body); font-size: var(--tue-fs-body); max-width: 56ch; line-height: var(--tue-leading-body); color: #E2E2DE; }
+
+  .badgerow { display: flex; gap: var(--tue-s2); align-items: center; flex-wrap: wrap; }
+  .btnrow { display: flex; gap: var(--tue-s3); flex-wrap: wrap; align-items: center; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--tue-s3); }
+  .cards h3 { font-family: var(--tue-display); text-transform: uppercase; font-size: 1.05rem; margin: 0 0 8px; letter-spacing: var(--tue-tracking-tight); }
+  .cards p { margin: 0; font-size: 0.95rem; line-height: 1.5; }
+  .foot { font-family: var(--tue-pixel); font-size: 11px; letter-spacing: 0.06em; color: var(--tue-mute); padding: var(--tue-s4) 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero" style="border-top:4px solid var(--tue-yellow);">
+    <div class="lockup">
+      <img class="mark" src="mark.svg" alt="Tuesday mark">
+      <span class="wordmark"><span class="wm-t">T</span>uesday</span>
+    </div>
+    <div class="badgerow" style="margin:8px 0 4px;">
+      <span class="tue-badge tue-badge--on-dark">T</span>
+      <span class="tue-badge tue-badge--on-dark">U</span>
+      <span class="tue-badge tue-badge--on-dark">E</span>
+    </div>
+    <h1 class="hero-line">Monday is for the company. <span class="y">Tuesday is for the one-person company.</span></h1>
+    <p class="hero-sub">Work management for people who do not have a manager. You are one. You are also the accountant, the support team, and the person who fixes the printer at 11pm.</p>
+  </section>
+
+  <!-- COLOR -->
+  <section>
+    <div class="label">Color</div>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:var(--tue-yellow)"></div><div class="meta"><b>Brand yellow</b>#FDB913</div></div>
+      <div class="sw"><div class="chip" style="background:var(--tue-black)"></div><div class="meta"><b>Black</b>#0B0B0B</div></div>
+      <div class="sw"><div class="chip" style="background:var(--tue-ink)"></div><div class="meta"><b>Ink</b>#161616</div></div>
+      <div class="sw"><div class="chip" style="background:var(--tue-white)"></div><div class="meta"><b>White</b>#FFFFFF</div></div>
+      <div class="sw"><div class="chip" style="background:var(--tue-paper)"></div><div class="meta"><b>Paper</b>#F7F6F2</div></div>
+    </div>
+  </section>
+
+  <!-- TYPE -->
+  <section>
+    <div class="label">Type</div>
+    <div class="spec">
+      <div class="s-pixel">SILKSCREEN — KICKERS &amp; BADGES</div>
+      <div class="s-hero">Heavy. Geometric.</div>
+      <div class="s-h2">Archivo Black — Headlines</div>
+      <p class="s-body">Space Grotesk carries the body. It stays out of the way and lets the yellow do the shouting. Tuesday talks to the solo operator as a peer who knows the grind — direct, dry, no corporate gloss, no exclamation marks.</p>
+    </div>
+  </section>
+
+  <!-- COMPONENTS -->
+  <section>
+    <div class="label">Components</div>
+    <div class="badgerow" style="margin-bottom:var(--tue-s4);">
+      <span class="tue-kicker">Launch</span>
+      <span class="tue-kicker--ghost">Beta</span>
+      <span class="tue-badge--lg tue-badge tue-badge--on-dark">T</span>
+      <span class="tue-badge tue-badge--on-dark">Y</span>
+      <span class="tue-badge--sm tue-badge tue-badge--on-dark">R</span>
+    </div>
+    <div class="btnrow" style="margin-bottom:var(--tue-s4);">
+      <a class="tue-btn" href="#">Get started</a>
+      <a class="tue-btn tue-btn--ghost" href="#">See the kit</a>
+    </div>
+    <div class="cards">
+      <div class="tue-card"><h3>Light card</h3><p>Hard border, offset shadow, no rounding. The block sits on the page like a stamped plate.</p></div>
+      <div class="tue-card tue-card--dark"><h3>Dark card</h3><p>Same shape, inverted. Yellow border, yellow shadow. Used on the black ground.</p></div>
+    </div>
+  </section>
+
+  <div class="foot">TUESDAY — INTERNAL BRAND KIT · COURSE UNIT 3.2 · NOT A REAL PRODUCT</div>
+</div>
+</body>
+</html>
