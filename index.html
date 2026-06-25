@@ -161,8 +161,10 @@
     <div class="eyebrow">תחנה 1</div>
     <h2 class="title">יוצרים את קול-המותג</h2>
     <p class="note">מתקינים plugin מוכן מהספרייה של קלוד בשם <span class="mono">brand-voice</span>, נותנים לו את כל החומרים המפוזרים של Tuesday, והוא מזקק מהם קול אחד עקבי. זו תחנה שכולם עושים.</p>
+    <p class="note" style="margin-top:var(--tue-s3)">מתקינים את <span class="mono">brand-voice</span> מהספרייה הרשמית של קלוד, <span class="mono">anthropics/knowledge-work-plugins</span>. יש שתי דרכים, בוחרים אחת. <b>דרך הממשק:</b> ב-Cowork נכנסים ל-Customize, ללשונית Plugins, ובאזור Personal plugins לוחצים על הפלוס ובוחרים <b>Add marketplace</b>, מקלידים <span class="mono">anthropics/knowledge-work-plugins</span>, לוחצים <b>Browse plugins</b>, ומתקינים מתוכה את <span class="mono">brand-voice</span>. <b>או דרך שורת-הפקודה</b> — פותחים <span class="mono">/plugin</span> ומריצים:</p>
+    <pre><code>/plugin marketplace add anthropics/knowledge-work-plugins
+/plugin install brand-voice@knowledge-work-plugins</code></pre>
     <ol class="steps">
-      <li>ב-Cowork נכנסים ל-Customize ואז Personal plugins, מוסיפים את הספרייה <span class="mono">anthropics/knowledge-work-plugins</span> ומתקינים מתוכה את <span class="mono">brand-voice</span>.</li>
       <li>מורידים את חבילת תחנה 1 (למטה) ופותחים אותה. בפנים תיקיית <span class="mono">raw</span> עם החומרים המפוזרים של Tuesday: מיילים, פוסטים והכרזות. חלקם טובים, חלקם תאגידיים ומשעממים. זה הבלגן שממנו מזקקים קול.</li>
       <li>מצרפים לצ'אט את הקבצים מתוך <span class="mono">raw</span>, ומריצים את הפרומפט הזה (הוא מכריח את ה-plugin לעבוד רק מהקבצים שצירפתם):</li>
     </ol>
@@ -190,7 +192,7 @@
     <h2 class="title">משתמשים בקול</h2>
     <p class="note">כאן מתקינים את ה-plugin הגנרי <span class="mono">brand-studio</span>, נותנים לו את <span class="mono">brand-voice.md</span> שיצרתם ועוד קבצים מהערכה, ומפיקים תוכן אמיתי. זה המסלול המלא, וכאן פוגשים את כל ארבעת הרכיבים יחד.</p>
 
-    <p class="note" style="margin-top:var(--tue-s3)">מתקינים את ה-plugin (ב-Cowork פותחים <span class="mono">/plugin</span>):</p>
+    <p class="note" style="margin-top:var(--tue-s3)">מתקינים את <span class="mono">brand-studio</span> מהספרייה <span class="mono">benefits-il/brand-studio</span>. יש שתי דרכים, בוחרים אחת. <b>דרך הממשק:</b> ב-Cowork נכנסים ל-Customize, ללשונית Plugins, ובאזור Personal plugins לוחצים על הפלוס ובוחרים <b>Add marketplace</b>, מקלידים <span class="mono">benefits-il/brand-studio</span>, לוחצים <b>Browse plugins</b>, ומתקינים את <span class="mono">brand-studio</span>. <b>או דרך שורת-הפקודה</b> — פותחים <span class="mono">/plugin</span> ומריצים:</p>
     <pre><code>/plugin marketplace add benefits-il/brand-studio
 /plugin install brand-studio@brand-studio</code></pre>
     <p class="note" style="margin-top:var(--tue-s3)">שני החיבורים — מוסיפים כל אחד פעם אחת ברשימת ה-Connectors. <span class="mono">Higgsfield</span> (תמונה ווידאו): <b>Add custom connector</b>, קוראים לו Higgsfield, מדביקים את <span class="mono">https://mcp.higgsfield.ai/mcp</span>, Connect, ומתחברים עם חשבון חינם (בלי כרטיס, בלי API key). <span class="mono">Gmail</span> (טיוטות): מדליקים את החיבור המובנה. המיילים נשמרים כטיוטה, אף פעם לא נשלחים.</p>
@@ -414,8 +416,10 @@
     <div class="eyebrow">Station 1</div>
     <h2 class="title">Build the brand voice</h2>
     <p class="note">Install a ready plugin from Claude's library called <span class="mono">brand-voice</span>, hand it Tuesday's scattered materials, and it distills one consistent voice. Everyone does this station.</p>
+    <p class="note" style="margin-top:var(--tue-s3)">Install <span class="mono">brand-voice</span> from Claude's official library, <span class="mono">anthropics/knowledge-work-plugins</span>. Two ways, pick one. <b>Through the UI:</b> in Cowork go to Customize, the Plugins tab, and under Personal plugins click the plus and choose <b>Add marketplace</b>, type <span class="mono">anthropics/knowledge-work-plugins</span>, click <b>Browse plugins</b>, and install <span class="mono">brand-voice</span> from it. <b>Or through the command line</b> — open <span class="mono">/plugin</span> and run:</p>
+    <pre><code>/plugin marketplace add anthropics/knowledge-work-plugins
+/plugin install brand-voice@knowledge-work-plugins</code></pre>
     <ol class="steps">
-      <li>In Cowork, go to Customize then Personal plugins, add the library <span class="mono">anthropics/knowledge-work-plugins</span>, and install <span class="mono">brand-voice</span> from it.</li>
       <li>Download the station 1 pack (below) and open it. Inside is a <span class="mono">raw</span> folder with Tuesday's scattered materials: emails, posts, announcements. Some good, some corporate and dull. That mess is what you distill a voice from.</li>
       <li>Attach the files from <span class="mono">raw</span> to the chat, and run this prompt (it forces the plugin to work only from the files you attached):</li>
     </ol>
@@ -443,7 +447,7 @@ Use ONLY the files I attached in this chat. Do not connect to Notion, Google Dri
     <h2 class="title">Use the voice</h2>
     <p class="note">Here you install the generic plugin <span class="mono">brand-studio</span>, hand it the <span class="mono">brand-voice.md</span> you made plus a few files from the pack, and produce real content. This is the full path, and here you meet all four parts together.</p>
 
-    <p class="note" style="margin-top:var(--tue-s3)">Install the plugin (in Cowork, open <span class="mono">/plugin</span>):</p>
+    <p class="note" style="margin-top:var(--tue-s3)">Install <span class="mono">brand-studio</span> from the <span class="mono">benefits-il/brand-studio</span> library. Two ways, pick one. <b>Through the UI:</b> in Cowork go to Customize, the Plugins tab, and under Personal plugins click the plus and choose <b>Add marketplace</b>, type <span class="mono">benefits-il/brand-studio</span>, click <b>Browse plugins</b>, and install <span class="mono">brand-studio</span>. <b>Or through the command line</b> — open <span class="mono">/plugin</span> and run:</p>
     <pre><code>/plugin marketplace add benefits-il/brand-studio
 /plugin install brand-studio@brand-studio</code></pre>
     <p class="note" style="margin-top:var(--tue-s3)">Two connectors — add each once in your Connectors list. <span class="mono">Higgsfield</span> (image and video): <b>Add custom connector</b>, name it Higgsfield, paste <span class="mono">https://mcp.higgsfield.ai/mcp</span>, Connect, and sign in with a free account (no card, no API key). <span class="mono">Gmail</span> (drafts): turn on the built-in connector. Emails are saved as drafts, never sent.</p>
